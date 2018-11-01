@@ -91,7 +91,7 @@ public class Bugbear extends Enemy {
     // calculate and report damage amount
 
     // include difference in the weapon strength vs opponent armor strength
-    modifier = weapon_.getPower() - k.armor_.getDefense();
+    modifier = weapon_.getPower() - k.getArmor_().getDefense();
 
     // damage is 5-13 hit points +/- the modifier
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
