@@ -31,11 +31,11 @@ public class Hobgoblin extends Enemy {
     }
 
 
-    public int getPower() {
+    int getPower() {
       return power_;
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
     }
   }
@@ -44,34 +44,27 @@ public class Hobgoblin extends Enemy {
         /* the number next to the weapon is the defense multiplier.
         Generally, "NOTHING" should not actually appear. */
 
-    NOTHING(1, "Nothing"),
-    GARBAGE_BAG(2, "Hefty garbage bag with holes cut-out for arms");
+    GARBAGE_BAG();
 
     private final String mixedCaps_;
-    private final int defense_;
 
-    Armor(int defense, String mixedCaps) {
-      this.defense_ = defense;
-      this.mixedCaps_ = mixedCaps;
+    Armor() {
+      this.mixedCaps_ = "Hefty garbage bag with holes cut-out for arms";
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
-    }
-
-    public int getDefense() {
-      return defense_;
     }
 
   }
 
-  Weapon weapon_ = Weapon.NOTHING;
-  Armor armor_ = Armor.GARBAGE_BAG;
+  private Weapon weapon_ = Weapon.NOTHING;
+  private final Armor armor_ = Armor.GARBAGE_BAG;
 
 
   // constructor
   public Hobgoblin() {
-    System.out.printf("\nHobgoblin()\n");
+    System.out.print("\nHobgoblin()\n");
     name_ = "Hobgoblin";
     health_ = (int) ((Math.random() * 10) + 5);
     gold_ = (int) ((Math.random() * 100) + 10);
@@ -113,12 +106,6 @@ public class Hobgoblin extends Enemy {
   }
 
 
-  // setters
-  public void setDefense() {
-    Armor armor = Armor.GARBAGE_BAG;
-  }
-
-
   public void setAutoWeapon() {
     /* auto select a weapon for auto generated knights */
     int choice = ((int) ((Math.random() * 2) + 1));
@@ -132,20 +119,11 @@ public class Hobgoblin extends Enemy {
         break;
 
       default:
-        System.out.printf("\nError while choosing auto weapon\n");
+        System.out.print("\nError while choosing auto weapon\n");
         System.exit(1);
     }
   }
 
-
-  public void setWeapon(Weapon weapon) {
-    weapon_ = weapon;
-  }
-
-
-  public void setArmor(Armor armor) {
-    armor_ = armor;
-  }
 
   // getters
   public String getName() {
@@ -166,11 +144,6 @@ public class Hobgoblin extends Enemy {
 
   public String getArmor() {
     return this.armor_.getMixedCaps();
-  }
-
-
-  public int getDefense() {
-    return defense_;
   }
 
 

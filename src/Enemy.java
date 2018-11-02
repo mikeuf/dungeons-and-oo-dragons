@@ -18,10 +18,10 @@ public abstract class Enemy {
   String name_ = null;
   int health_ = 0;
   int gold_ = 0;
-  int defense_ = 0;
+  final int defense_ = 0;
 
   // constructor intentionally left blank
-  public Enemy() {
+  Enemy() {
   }
 
   public abstract int fight(Knight k);
@@ -58,43 +58,29 @@ public abstract class Enemy {
   public static Enemy getRandomEnemy() {
 
     // creates random enemy object for knight to fight
-    System.out.printf("\ngetRandomEnemy()\n");
+    System.out.print("\ngetRandomEnemy()\n");
     int enemyChooser = ((int) ((Math.random() * 3) + 1));
 
     switch (enemyChooser) {
       case 1: {
-        Enemy e = new Hobgoblin();
-        return e;
+        return new Hobgoblin();
       }
       case 2: {
-        Enemy e = new Bugbear();
-        return e;
+        return new Bugbear();
       }
       case 3: {
-        Enemy e = new Balrog();
-        return e;
+        return new Balrog();
       }
       default:
-        System.out.printf("\nError while generating enemy. Exiting\n");
+        System.out.print("\nError while generating enemy. Exiting\n");
     }
 // should not get here -- but adding this to satisfy the return value requirement
-    Enemy e = new Hobgoblin();
-    return e;
+    return new Hobgoblin();
   }
 
 
   // setters
   public abstract void setAutoWeapon();
-
-
-  public void setHealth(int health) {
-    health_ = health;
-  }
-
-
-  public void setGold(int gold) {
-    gold_ = gold;
-  }
 
 
   // getters
@@ -116,7 +102,7 @@ public abstract class Enemy {
     return "";
   }
 
-  public String getArmor() {
+  String getArmor() {
     return "";
   }
 }

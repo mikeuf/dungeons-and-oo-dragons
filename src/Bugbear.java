@@ -31,11 +31,11 @@ public class Bugbear extends Enemy {
     }
 
 
-    public int getPower() {
+    int getPower() {
       return power_;
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
     }
   }
@@ -44,33 +44,26 @@ public class Bugbear extends Enemy {
         /* the number next to the weapon is the defense multiplier.
         Generally, "NOTHING" should not actually appear. */
 
-    NOTHING(1, "Nothing"),
-    TRASH_CAN_LID(3, "Metal trash can lid for a breastplate, suspended with bungee cords");
+    TRASH_CAN_LID();
 
     private final String mixedCaps_;
-    private final int defense_;
 
-    Armor(int defense, String mixedCaps) {
-      this.defense_ = defense;
-      this.mixedCaps_ = mixedCaps;
+    Armor() {
+      this.mixedCaps_ = "Metal trash can lid for a breastplate, suspended with bungee cords";
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
-    }
-
-    public int getDefense() {
-      return defense_;
     }
 
   }
 
-  Weapon weapon_ = Weapon.NOTHING;
-  Armor armor_ = Armor.TRASH_CAN_LID;
+  private Weapon weapon_ = Weapon.NOTHING;
+  private final Armor armor_ = Armor.TRASH_CAN_LID;
 
   // constructor
   public Bugbear() {
-    System.out.printf("\nBugbear()\n");
+    System.out.print("\nBugbear()\n");
     this.name_ = "Bugbear";
     this.health_ = (int) ((Math.random() * 30) + 20);
     this.gold_ = (int) ((Math.random() * 200) + 20);
@@ -111,12 +104,6 @@ public class Bugbear extends Enemy {
   }
 
 
-  // setters
-  public void setDefense() {
-    Armor armor_ = Armor.TRASH_CAN_LID;
-  }
-
-
   public void setAutoWeapon() {
     /* auto select a weapon for auto generated knights */
     int choice = ((int) ((Math.random() * 2) + 1));
@@ -130,28 +117,9 @@ public class Bugbear extends Enemy {
         break;
 
       default:
-        System.out.printf("\nError while choosing auto weapon\n");
+        System.out.print("\nError while choosing auto weapon\n");
         System.exit(1);
     }
-  }
-
-  public void setAutoArmor() {
-    /* auto select armor for auto generated knights */
-
-    int choice = ((int) ((Math.random() * 4) + 1));
-    switch (choice) {
-      case 1:
-        armor_ = Armor.TRASH_CAN_LID;
-        break;
-
-      default:
-        System.out.printf("\nError while choosing armor\n");
-        System.exit(1);
-    }
-  }
-
-  public void setWeapon(Weapon weapon) {
-    weapon_ = weapon;
   }
 
 
@@ -177,7 +145,4 @@ public class Bugbear extends Enemy {
   }
 
 
-  public int getDefense() {
-    return defense_;
-  }
 }

@@ -1,62 +1,77 @@
-/*
-Knight.java
-
-Knight object that can be used to fight against other knights
-
-*/
-
 import java.util.Scanner;
 
 /**
- * These are the weapons available to the knights.
- * The number next to the weapon is a damage multiplier. A higher number means "more damage."
+ * Knight.java
+ *
+ * Knight object that can be used to fight against other knights
+ *
  * */
 public class Knight {
-  public String getName_() {
+
+  private String name_ = null;
+  private int health_ = 0;
+  private int numBattles_ = 0;
+  private int age_ = 0;
+  private int gold_ = 0;
+  private Weapon weapon_ = Weapon.NOTHING;
+  private Armor armor_ = Armor.NOTHING;
+  private int fightOrder_ = 0;
+
+  /**
+    * ctor initializes knight attributes if knight is auto-generated
+    */
+  public Knight() {
+    setHealth_((int) ((Math.random() * 50) + 50));
+    setNumBattles_((int) ((Math.random() * 10) + 1));
+    setAge_((int) ((Math.random() * 47) + 18));
+    setGold_((int) ((Math.random() * 1000) + 20));
+  }
+
+  private String getName_() {
     return name_;
   }
 
-  public void setName_(String name_) {
+  private void setName_(String name_) {
     this.name_ = name_;
   }
 
-  public int getHealth_() {
+  private int getHealth_() {
     return health_;
   }
 
-  public void setHealth_(int health_) {
+  private void setHealth_(int health_) {
     this.health_ = health_;
   }
 
-  public int getNumBattles_() {
+  private int getNumBattles_() {
     return numBattles_;
   }
 
-  public void setNumBattles_(int numBattles_) {
+  private void setNumBattles_(int numBattles_) {
     this.numBattles_ = numBattles_;
   }
 
-  public int getAge_() {
+  private int getAge_() {
     return age_;
   }
 
-  public void setAge_(int age_) {
+  private void setAge_(int age_) {
     this.age_ = age_;
   }
 
-  public int getGold_() {
+  private int getGold_() {
     return gold_;
   }
 
-  public void setGold_(int gold_) {
+  private void setGold_(int gold_) {
     this.gold_ = gold_;
   }
 
-  public Weapon getWeapon_() {
+  private Weapon getWeapon_() {
     return weapon_;
   }
 
-  public void setWeapon_(Weapon weapon_) {
+  private void setWeapon_(Weapon weapon_) {
     this.weapon_ = weapon_;
   }
 
@@ -64,26 +79,22 @@ public class Knight {
     return armor_;
   }
 
-  public void setArmor_(Armor armor_) {
+  private void setArmor_(Armor armor_) {
     this.armor_ = armor_;
   }
 
-  public int getFightOrder_() {
+  private int getFightOrder_() {
     return fightOrder_;
   }
 
-  public void setFightOrder_(int fightOrder_) {
+  private void setFightOrder_(int fightOrder_) {
     this.fightOrder_ = fightOrder_;
   }
 
-  public Scanner getInput() {
-    return input;
-  }
-
-  public void setInput(Scanner input) {
-    this.input = input;
-  }
-
+  /**
+   * These are the weapons available to the knights.
+   * The number next to the weapon is a damage multiplier. A higher number means "more damage."
+   * */
   enum Weapon {
     NOTHING(1, "Nothing"),
     SPEAR(2, "Spear"),
@@ -99,10 +110,10 @@ public class Knight {
       this.mixedCaps_ = mixedCaps;
     }
 
-    public int getPower() {
+    int getPower() {
       return power_;
     }
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
     }
   }
@@ -126,7 +137,7 @@ public class Knight {
       this.mixedCaps_ = mixedCaps;
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
     }
     public int getDefense() {
@@ -153,67 +164,28 @@ public class Knight {
       this.mixedCaps_ = mixedCaps;
     }
 
-    public String getMixedCaps() {
+    String getMixedCaps() {
       return mixedCaps_;
     }
   }
 
-  private String name_ = null;
-  private int health_ = 0;
-  private int numBattles_ = 0;
-  private int age_ = 0;
-  private int gold_ = 0;
-  private Weapon weapon_ = Weapon.NOTHING;
-  private Armor armor_ = Armor.NOTHING;
-  private int fightOrder_ = 0;
 
-  private Scanner input = new Scanner(System.in);
+  private final Scanner input = new Scanner(System.in);
 
-  // default constructor
-  public Knight() {
-    setHealth_((int) ((Math.random() * 50) + 50));
-    setNumBattles_((int) ((Math.random() * 10) + 1));
-    setAge_((int) ((Math.random() * 47) + 18));
-    setGold_((int) ((Math.random() * 1000) + 20));
-  }
-
-  // fully-parameterized constructor
-  public Knight(String name, int health, int numBattles, int age, int gold,
-                Weapon weapon, Armor armor) {
-    setName_(name);
-    setHealth_(health);
-    setNumBattles_(numBattles);
-    setAge_(age);
-    setGold_(gold);
-    setWeapon_(weapon);
-    setArmor_(armor);
-  }
-
-  // constructor with only name specified
-  public Knight(String name) {
-    setName_(name);
-  }
-
-  // fighting another Knight
+  /**
+   * Fight another knight
+   * */
   public int fight(Knight k) {
-
-        /* print battle-related messages and call the opponent's
-        setDamage() method
-         */
-
     int modifier = 0;
 
     System.out.printf("\n%s strikes %s with his %s! ",
             this.getName(), k.getName(), this.getWeapon());
-
-    // calculate and report damage amount
-
-    // include difference in the weapon strength vs opponent armor strength
+    /*
+     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
+     * damage is 5-13 hit points +/- the modifier
+     */
     modifier = getWeapon_().getPower() - k.getArmor_().getDefense();
-
-    // damage is 5-13 hit points +/- the modifier
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
-
     System.out.printf("(DAMAGE: %d)\n", damage);
 
     // apply damage to opponent
@@ -224,12 +196,12 @@ public class Knight {
       System.out.printf("\n%s hath been slain by %s!", k.getName(), this.getName());
       return 1;
     }
-
     return 0;
   }
 
-
-  // fighting an Enemy (monster)
+/**
+ * Fight a monster
+ */
   public int fight(Enemy e) {
 
         /* print battle-related messages and call the opponent's
@@ -241,12 +213,12 @@ public class Knight {
     System.out.printf("\n%s strikes the %s with his %s! ",
             this.getName(), e.getName(), this.getWeapon());
 
-    // calculate and report damage amount
-
-    // include difference in the weapon strength vs opponent armor strength
+    /*
+     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
+     * damage is 5-13 hit points +/- the modifier
+     */
     modifier = getWeapon_().getPower() - e.defense_;
 
-    // damage is 5-13 hit points +/- the modifier
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
 
     System.out.printf("(DAMAGE: %d)\n", damage);
@@ -260,7 +232,6 @@ public class Knight {
       takeEnemyGold(e);
       return 1;
     }
-
     return 0;
   }
 
@@ -270,82 +241,29 @@ public class Knight {
     setHealth_(getHealth_() - damage);
   }
 
-  public void setName(String name) {
-    setName_(name);
-  }
-
-  public void setHealth(int health) {
-    setHealth_(health);
-  }
-
-  public void setNumBattles(int numBattles) {
-
-    setNumBattles_(numBattles);
-  }
-
-  public void setAge(int age) {
-    setAge_(age);
-  }
-
-  public void setGold(int gold) {
-    setGold_(gold);
-  }
-
-  public void setWeapon(Weapon weapon) {
-    setWeapon_(weapon);
-  }
-
-
-  public void setArmor(Armor armor) {
-    setArmor_(armor);
-  }
 
   public void setName() {
-    System.out.printf("Enter the name of your Knight: ");
-    setName_(getInput().nextLine());
-  }
-
-  public void setHealth() {
-    System.out.printf("Enter health: ");
-
-    setHealth_(getInput().nextInt());
-  }
-
-  public void setNumBattles() {
-    System.out.printf("Enter number of battles: ");
-
-    setNumBattles_(getInput().nextInt());
-  }
-
-  public void setAge() {
-    System.out.printf("Enter age: ");
-
-    setAge_(getInput().nextInt());
-  }
-
-  public void setGold() {
-    System.out.printf("Enter amount of gold: ");
-
-    setGold_(getInput().nextInt());
+    System.out.print("Enter the name of your Knight: ");
+    setName_(input.nextLine());
   }
 
 
+  /**
+   *  allow user to select weapon
+   **/
   public void setWeapon() {
-    /* allow user to select weapon */
-
     int choice = 0;
     do {
-      System.out.printf("\nNow select your weapon! (Choose number):\n" +
+      System.out.print("\nNow select your weapon! (Choose number):\n" +
               "1) Long Sword\n" +
               "2) Battle Axe\n" +
               "3) Spear\n" +
               "4) Warhammer\n" +
               "Your choice my liege? : ");
-
-      choice = getInput().nextInt();
-
-      if (choice < 0 || choice > 4) {
-        System.out.printf("\nType a number between 1 and 4.\n");
+      try {
+        choice = input.nextInt();
+      } catch (Exception ex) {
+        System.out.println("Enter an integer between 1 and 4.\n" + "(" + ex + ")");
       }
     }
     while (choice < 0 || choice > 4);
@@ -368,59 +286,16 @@ public class Knight {
         break;
 
       default:
-        System.out.printf("\nError while choosing weapon\n");
+        System.out.println("Error while choosing a weapon. Exiting ...");
         System.exit(1);
     }
-  }
-
-  public void setArmor() {
-    /* allow user to select armor */
-    int choice = 0;
-    do {
-      System.out.printf("\nNow select your armor! (Choose number):\n" +
-              "1) Leather\n" +
-              "2) Chain mail\n" +
-              "3) Plate mail\n" +
-              "4) Mithril\n" +
-              "Your choice my liege? : ");
-
-      choice = getInput().nextInt();
-
-      if (choice < 0 || choice > 4) {
-        System.out.printf("\nType a number between 1 and 4.\n");
-      }
-    }
-    while (choice < 0 || choice > 4);
-
-    switch (choice) {
-      case 1:
-        setArmor_(Armor.LEATHER);
-        break;
-
-      case 2:
-        setArmor_(Armor.CHAIN_MAIL);
-        break;
-
-      case 3:
-        setArmor_(Armor.PLATE_MAIL);
-        break;
-
-      case 4:
-        setArmor_(Armor.MITHRIL);
-        break;
-
-      default:
-        System.out.printf("\nError while choosing armor\n");
-        System.exit(1);
-    }
-
   }
 
   public void setFightOrder(int fightOrder) {
     setFightOrder_(fightOrder);
   }
 
-  public void takeEnemyGold(Enemy e) {
+  private void takeEnemyGold(Enemy e) {
     System.out.printf("\n\n%s takes the %s's %d gold coins\n" +
             "and hands them to his accountant.\n", this.getName(), e.getName(), e.getGold());
     this.setGold_(this.getGold_() + e.getGold());
@@ -449,7 +324,7 @@ public class Knight {
         break;
 
       default:
-        System.out.printf("\nError while choosing auto weapon\n");
+        System.out.print("\nError while choosing auto weapon\n");
         System.exit(1);
     }
   }
@@ -476,7 +351,7 @@ public class Knight {
         break;
 
       default:
-        System.out.printf("\nError while choosing armor\n");
+        System.out.print("\nError while choosing armor\n");
         System.exit(1);
     }
   }
@@ -520,7 +395,7 @@ public class Knight {
         break;
 
       default:
-        System.out.printf("\nError while choosing auto name\n");
+        System.out.print("\nError while choosing auto name\n");
         System.exit(1);
     }
   }
@@ -534,11 +409,11 @@ public class Knight {
     return this.getHealth_();
   }
 
-  public int getNumBattles() {
+  private int getNumBattles() {
     return this.getNumBattles_();
   }
 
-  public int getAge() {
+  private int getAge() {
     return this.getAge_();
   }
 
@@ -546,11 +421,11 @@ public class Knight {
     return this.getGold_();
   }
 
-  public String getWeapon() {
+  private String getWeapon() {
     return this.getWeapon_().getMixedCaps();
   }
 
-  public String getArmor() {
+  private String getArmor() {
     return this.getArmor_().getMixedCaps();
   }
 
