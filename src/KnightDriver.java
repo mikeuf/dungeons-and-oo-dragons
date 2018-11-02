@@ -15,21 +15,21 @@ class KnightDriver {
   private static final ArrayList<Knight> knightArray = new ArrayList<>();
 
   /** stores monsters for fighting */
-  private static final ArrayList<Enemy> enemyArray = new ArrayList<>();
+  private static final ArrayList<Monster> monsterArray = new ArrayList<>();
 
   /** Reinitialize knight array  */
   private static void clearKnights() {
     knightArray.clear();
   }
 
-  /** Reinitialize enemy array */
+  /** Reinitialize monster array */
   private static void clearEnemies() {
-    enemyArray.clear();
+    monsterArray.clear();
   }
 
   /**
    * Player can choose number of random enemies to generate.
-   * Each enemy has multiple attack types, with different damage multipliers. The weapons are selected at random.
+   * Each monster has multiple attack types, with different damage multipliers. The weapons are selected at random.
    * Each of the enemies has a random amount of treasure. After each battle, the player
    * knight will take the treasure and update his gold_ member variable.
    * */
@@ -44,14 +44,14 @@ class KnightDriver {
 
     // generate n number of random enemies
     try {
-      buildEnemyArray(numEnemies);
+      buildMonsterArray(numEnemies);
     } catch (numNotAnInt numNotAnInt) {
       // custom exception to reject non-ints
       numNotAnInt.getMessage();
     }
 
-    // loop through each enemy encounter
-    for (int i = 0; i < (enemyArray.size()); ++i) {
+    // loop through each monster encounter
+    for (int i = 0; i < (monsterArray.size()); ++i) {
 
       // if the player is dead (from the last fight, break out of the loop)
       if (k.getHealth() < 0) {
@@ -60,26 +60,26 @@ class KnightDriver {
 
         System.out.printf("\nThe %s makes off with %s's %d gold coins and donates them to\n" +
                         " a charity that supports underprivileged %ss of Middle Earth.\n",
-                enemyArray.get(i - 1).getName(),
+                monsterArray.get(i - 1).getName(),
                 k.getName(),
                 k.getGold(),
-                enemyArray.get(i - 1).getName());
+                monsterArray.get(i - 1).getName());
         break;
       }
 
       // assigning element to "e" for the sake of readability
-      Enemy e = enemyArray.get(i);
+      Monster e = monsterArray.get(i);
 
-      // each enemy class has multiple possible attacks
+      // each monster class has multiple possible attacks
       e.setAutoWeapon();
 
       System.out.printf("\n%s is merrily traversing the Dungeon of Infinite Loops when a dreaded %s leaps out\n" +
               " from the darkness, brandishing... %s\n", k.getName(), e.getName(), e.getWeapon());
 
-      // print stats for enemy and knight
-      System.out.printf("\n*** FIGHT %d of %d ***\n", (i + 1), enemyArray.size());
-      System.out.print("\nENEMY STATS:");
-      e.printEnemyStats();
+      // print stats for monster and knight
+      System.out.printf("\n*** FIGHT %d of %d ***\n", (i + 1), monsterArray.size());
+      System.out.print("\nMONSTER STATS:");
+      e.printStats();
 
       System.out.printf("\n%s STATS:", k.getName());
       k.printKnightStats();
@@ -104,9 +104,9 @@ class KnightDriver {
     System.out.print("\nWelcome to Dungeons and Object Oriented Dragons (with Random-Monster-Matic)!\n");
   }
 
-  private static void buildEnemyArray(int numEnemies) {
+  private static void buildMonsterArray(int numEnemies) {
     for (int i = 0; i < numEnemies; ++i) {
-      enemyArray.add(Enemy.getRandomEnemy());
+      monsterArray.add(Monster.getRandomMonster());
     }
   }
 
@@ -181,7 +181,7 @@ class KnightDriver {
    * Fight continues until someone's health drops to zero
    * Note: This is an overload of battle()
    */
-  private static void battle(Knight k, Enemy e) {
+  private static void battle(Knight k, Monster e) {
     int roundNumber = 0;
     Scanner input = new Scanner(System.in);
 
@@ -210,22 +210,9 @@ class KnightDriver {
     Scanner input = new Scanner(System.in);
     String response = "";
 
-    do {
-      System.out.print("\nWould you like to auto-generate an opponent? (yes/no)\n");
-      response = input.nextLine();
+    createKnightAutomatically();
 
-      if (response.equalsIgnoreCase("yes")) {
-        createKnightAutomatically();
-      } else if (response.equalsIgnoreCase("no")) {
-        createKnightManually();
-      } else {
-        System.out.printf("\nYou entered \"%s\".", response);
-        System.out.print("\nPlease enter exactly \"yes\" or \"no.\"\n");
-      }
-    } while ((!(response.equalsIgnoreCase("yes")) &&
-            (!(response.equalsIgnoreCase("no")))));
-
-    System.out.print("\nHere are the stats for your knights:\n");
+    System.out.print("\nHere are the pre-fight stats for the knights:\n");
 
     for (int i = 0; i < knightArray.size(); ++i) {
       System.out.printf("\n*** Knight %d ***", (i + 1));
@@ -233,29 +220,22 @@ class KnightDriver {
     }
 
     do {
-      System.out.print("\nEnter \"y\" to begin the fight, or \"n\" to exit: ");
+      System.out.print("\nPress any key to begin the fight.");
       response = input.nextLine();
 
-      if (response.equalsIgnoreCase("n")) {
-        System.out.print("\nExiting program... \n");
-        System.exit(0);
-      } else if (response.equalsIgnoreCase("y")) {
 
-        // determine which knight goes first
-        if (knightArray.size() > 1) {
-          coinToss(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
-        } else {
-          System.out.print("\nERROR: knightArray is smaller than expected. Exiting...");
-        }
-
-        // start the actual battle
-        if (knightArray.get(knightArray.size() - 2).getFightOrder() == 1) {
-          battle(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
-        } else {
-          battle(knightArray.get(knightArray.size() - 1), knightArray.get(knightArray.size() - 2));
-        }
+      // determine which knight goes first
+      if (knightArray.size() > 1) {
+        coinToss(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
       } else {
-        System.out.print("\nEnter exactly \"y\" or \"n\".");
+        System.out.print("\nERROR: knightArray is smaller than expected. Exiting...");
+      }
+
+      // start the actual battle
+      if (knightArray.get(knightArray.size() - 2).getFightOrder() == 1) {
+        battle(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
+      } else {
+        battle(knightArray.get(knightArray.size() - 1), knightArray.get(knightArray.size() - 2));
       }
     }
     while ((!(response.equalsIgnoreCase("y")) &&
@@ -304,21 +284,21 @@ class KnightDriver {
         System.out.println("Please enter exactly 1, 2 or 3.");
       }
 
-      // this doesn't start until after the fighting is complete
-        System.out.print("\nPlay again? (y/n): ");
+      // after the fighting is complete
+      System.out.print("\nPlay again? (y/n): ");
 
-        // running nextLine() twice to clear the buffered newline from the previous menu
-        input.nextLine();
-        playAgain = input.nextLine();
+      // running nextLine() twice to clear the buffer, so it doesn't auto trigger
+      input.nextLine();
+      playAgain = input.nextLine();
 
-        if (playAgain.equalsIgnoreCase("n")) {
-          System.out.print("\nExiting program... \n");
-          System.exit(0);
-        } else if ((!(playAgain.equalsIgnoreCase("n")) &&
-                (!(playAgain.equalsIgnoreCase("y"))))) {
-          System.out.println("Enter either \"y\" or \"n.\"");
-        }
+      if (playAgain.equalsIgnoreCase("n")) {
+        System.out.print("\nExiting program... \n");
+        System.exit(0);
+      } else if ((!(playAgain.equalsIgnoreCase("n")) &&
+              (!(playAgain.equalsIgnoreCase("y"))))) {
+        System.out.println("Enter either \"y\" or \"n.\"");
+      }
     }
     while (playAgain.equalsIgnoreCase("y"));
   }
-} // end class
+}

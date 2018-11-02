@@ -13,7 +13,7 @@ Armor type:
 */
 
 
-public class Balrog extends Enemy {
+public class Balrog extends Monster {
 
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.

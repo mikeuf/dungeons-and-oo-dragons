@@ -12,7 +12,7 @@ Armor type:
 
 */
 
-public class Hobgoblin extends Enemy {
+public class Hobgoblin extends Monster {
 
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.

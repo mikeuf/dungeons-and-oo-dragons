@@ -13,7 +13,7 @@ Armor type:
 */
 
 
-public class Bugbear extends Enemy {
+public class Bugbear extends Monster {
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.
         Generally, "NOTHING" should not actually appear. */

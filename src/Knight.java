@@ -202,7 +202,7 @@ public class Knight {
 /**
  * Fight a monster
  */
-  public int fight(Enemy e) {
+  public int fight(Monster monst) {
 
         /* print battle-related messages and call the opponent's
         setDamage() method
@@ -211,25 +211,25 @@ public class Knight {
     int modifier = 0;
 
     System.out.printf("\n%s strikes the %s with his %s! ",
-            this.getName(), e.getName(), this.getWeapon());
+            this.getName(), monst.getName(), this.getWeapon());
 
     /*
      * when calculating damage amount include difference in the weapon strength vs opponent armor strength
      * damage is 5-13 hit points +/- the modifier
      */
-    modifier = getWeapon_().getPower() - e.defense_;
+    modifier = getWeapon_().getPower() - monst.defense_;
 
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
 
     System.out.printf("(DAMAGE: %d)\n", damage);
 
     // apply damage to opponent
-    e.takeDamage(damage);
+    monst.setHealth(monst.getHealth() - damage);
 
     // check to see if the opponent is dead
-    if (e.getHealth() < 0) {
-      System.out.printf("\nThe %s hath been slain by %s!", e.getName(), this.getName());
-      takeEnemyGold(e);
+    if (monst.getHealth() < 0) {
+      System.out.printf("\nThe %s hath been slain by %s!", monst.getName(), this.getName());
+      takeMonsterGold(monst);
       return 1;
     }
     return 0;
@@ -295,7 +295,7 @@ public class Knight {
     setFightOrder_(fightOrder);
   }
 
-  private void takeEnemyGold(Enemy e) {
+  private void takeMonsterGold(Monster e) {
     System.out.printf("\n\n%s takes the %s's %d gold coins\n" +
             "and hands them to his accountant.\n", this.getName(), e.getName(), e.getGold());
     this.setGold_(this.getGold_() + e.getGold());
