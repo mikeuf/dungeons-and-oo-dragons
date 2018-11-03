@@ -78,7 +78,7 @@ class DungeonsAndObjectOrientedDragons {
     PlayerCharacter pc = new PlayerCharacter();
 
     System.out.print("Enter the name of your knight: ");
-    private final Scanner input = new Scanner(System.in);
+    final Scanner input = new Scanner(System.in);
     String name = input.nextLine();
     pc.setName(name);
 

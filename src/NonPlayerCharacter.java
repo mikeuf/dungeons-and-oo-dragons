@@ -38,7 +38,6 @@ public abstract class NonPlayerCharacter implements Character {
 
   // public abstract int fight(PlayerCharacter k);
 
-  @Override
   public int attack(PlayerCharacter pc) {
     System.out.printf("\n%s strikes the %s with his %s! ", name, pc.getName(), myWeapon.getName());
     /*
@@ -62,11 +61,6 @@ public abstract class NonPlayerCharacter implements Character {
             "\nWeapon: " + getWeapon() +
             "\nArmor: " + getArmor());
   }
-
-
-
-  // setters
-  public abstract void generateWeapon();
 
   public void setHealth(int health) {
     this.health -= health;

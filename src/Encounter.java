@@ -48,7 +48,7 @@ public class Encounter {
         displayBattleLost();
       }
 
-      int damage = npc.attack(npc);
+      damage = pc.attack(npc);
       npc.setHealth(npc.getHealth() - damage);
 
       if (npc.getHealth() <= 0) {
@@ -75,8 +75,8 @@ public class Encounter {
 
   private void displayBattleWon () {
     System.out.printf("\nThe %s hath been slain by %s!" +
-                    "The %s had %d gold coins which %s is now pocketing.",
-            npc.getName(), pc.getName()), npc.getName(), npc.getGold(), npc.getName());
+            "\nThe %s had %d gold coins which %s is now pocketing.",
+            npc.getName(), pc.getName(), npc.getName(), npc.getGold(), npc.getName());
 
 // transfer the gold from the npc to the pc
     pc.setGold(pc.getGold() + npc.getGold());

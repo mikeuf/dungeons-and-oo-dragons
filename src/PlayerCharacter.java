@@ -18,8 +18,6 @@ public class PlayerCharacter implements Character {
   private final int GOLD_MULTIPLIER = 100;
   private final int HEALTH_MULTIPLIER = 50;
   private final int AGE_MULTIPLIER = 47;
-//  Map<String, Integer> weapon;
-  //Map<String, Integer> armor;
 
   /**
     * ctor automatically initializes some knight attributes if the knight is auto-generated
@@ -30,7 +28,6 @@ public class PlayerCharacter implements Character {
     setAge((int) ((Math.random() * AGE_MULTIPLIER) + 18));
   }
 
-  @Override
   public int attack(NonPlayerCharacter npc) {
     System.out.printf("\n%s strikes the %s with his %s! ", name, npc.getName(), myWeapon.getName());
     /*
@@ -130,7 +127,7 @@ public class PlayerCharacter implements Character {
    *
    * @param armorNumber
    */
-  public void chooseArmorInteractively(int armorNumber) {
+  public void generateArmor(int armorNumber) {
     switch (armorNumber) {
       case 1:
         myArmor.setName("chain mail");
@@ -155,7 +152,7 @@ public class PlayerCharacter implements Character {
    */
   public void chooseArmorAutomatically() {
     int randomNumber = ((int) ((Math.random() * 3) + 1));
-    chooseArmorAutomatically(randomNumber);
+    generateArmor(randomNumber);
   }
 
   /**
@@ -191,8 +188,8 @@ public class PlayerCharacter implements Character {
             "\nHealth: " + getHealth() +
             "\nAge: " + getAge() +
             "\nGold: $" + getGold() +
-            "\nWeapon: " + getWeapon() +
-            "\nArmor: " + getArmor());
+            "\nWeapon: " + myWeapon.getName() +
+            "\nArmor: " + myArmor.getName());
   }
 
   public String getName() {
@@ -231,18 +228,19 @@ public class PlayerCharacter implements Character {
     return myArmor.getDefenseLevel();
   }
 
+  /*
   public String getWeapon() {
-    return weapon.;
+    return myWeapon.getName();
   }
 
   public Armor getArmor() {
-    return armor;
+    return myArmor.getName();
   }
-
 
   public void setArmor(Armor armor) {
     this.armor = armor;
   }
+  */
 }
 
 
