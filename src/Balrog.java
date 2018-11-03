@@ -13,60 +13,48 @@ Armor type:
 */
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Balrog extends NonPlayerCharacter {
 
-  /**
-   * Weapons available to Balrog
-   */
-  private enum Weapon {
-    // The number next to the weapon is the damage multiplier.
-    FEARSOME_FISTS(2, "Fearsome fists"),
-    FIERY_FLAIL(5, "Fiery flail");
+  private final int GOLD_MULTIPLIER = 50000;
+  private final int HEALTH_MULTIPLIER = 1000;
 
-    }
-
-    int getPower() {
-      return power_;
-    }
-
-    String getMixedCaps() {
-      return mixedCaps_;
-    }
+  private static final Map<String, Integer> weapon;
+  static {
+    Map<String, Integer> weapon = new HashMap<String, Integer>;
+    weapon.put("fearsome fists", 2);
+    weapon.put("fiery flail", 5);
+    //   weapon = Collections.unmodifiableMap(weapon);
   }
 
-
-  enum Armor {
-        /* the number next to the weapon is the defense multiplier.
-        Generally, "NOTHING" should not actually appear. */
-
-    ENCHANTED_HIDE();
-
-    private final String mixedCaps_;
-
-    Armor() {
-      this.mixedCaps_ = "Enchanted Hide";
-    }
-
-    String getMixedCaps() {
-      return mixedCaps_;
-    }
-
-  }
-
-
-
-
-
-  // constructor
   public Balrog() {
     name = "Balrog";
-    health = (int) ((Math.random() * 100) + 100);
-    gold = (int) ((Math.random() * 50000) + 500);
+    health = (int) ((Math.random() * HEALTH_MULTIPLIER) + 100);
+    gold = (int) ((Math.random() * GOLD_MULTIPLIER) + 500);
   }
 
+  public void attack(PlayerCharacter pc) {};
 
+  public
+  int choice = ((int) ((Math.random() * 2) + 1));
+    switch (choice) {
+    case 1:
+      weapon = Weapon.FEARSOME_FISTS;
+      break;
 
+    case 2:
+      weapon = Weapon.FIERY_FLAIL;
+      break;
 
+    default:
+      System.out.print("\nError while choosing auto weapon\n");
+      System.exit(1);
+  }
+}
+
+  /*
 
   public void generateWeapon() {
     /* auto select a weapon for auto generated knights */
@@ -85,6 +73,7 @@ public class Balrog extends NonPlayerCharacter {
         System.exit(1);
     }
   }
+  */
 
 
   public String getName() {

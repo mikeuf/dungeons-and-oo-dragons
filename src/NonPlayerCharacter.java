@@ -13,6 +13,9 @@ knight will take the treasure and update his gold_ member variable.
 */
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class NonPlayerCharacter implements Character {
 
   // placeholders that will be extended by subclasses
@@ -22,6 +25,8 @@ public abstract class NonPlayerCharacter implements Character {
   int health;
   int gold;
   final int defense = 0;
+
+
 
 
   private enum Weapon {

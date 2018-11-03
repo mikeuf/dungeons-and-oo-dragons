@@ -1,3 +1,5 @@
+import java.util.Map;
+
 /**
  * PlayerCharacter.java
  *
@@ -5,6 +7,8 @@
  *
  * */
 public class PlayerCharacter implements Character {
+
+  Map<String, Integer> Weapon;
 
   // EMERGENCY EMERGENCY MAY DAY MAY DAY
 
