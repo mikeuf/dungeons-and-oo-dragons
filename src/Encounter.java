@@ -67,6 +67,10 @@ public class Encounter {
                     "\nThe %s makes off with %s's %d gold coins and donates them to\n" +
                     "\na charity that supports underprivileged %ss of Middle Earth.\n",
             npc.getName(), pc.getName(), pc.getGold(), pc.getName());
+
+    // this ends the loop from the DungeonsAndObjectOrientedDragons class that called the Encounter class
+    // because it is looping through all of the enemies.
+    DungeonsAndObjectOrientedDragons.NON_PLAYER_CHARACTER_ARRAY.clear();
   }
 
   private void displayBattleWon () {
