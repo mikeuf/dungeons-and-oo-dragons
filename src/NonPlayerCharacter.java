@@ -37,17 +37,15 @@ public abstract class NonPlayerCharacter implements Character {
   // public abstract int fight(PlayerCharacter k);
 
 
+  @Override
   public void printStats() {
-        /* I used toString() for the name. I could have used toString()
-        for the rest, but I used getters because they include some
-        formatting to make it look nicer. I hope that's OK  */
-
-    System.out.println("\nNonPlayerCharacter Name: " + name);
-    System.out.println("NonPlayerCharacter Health: " + getHealth());
-    System.out.println("NonPlayerCharacter Gold: $" + getGold());
-    System.out.println("NonPlayerCharacter Weapon: " + getWeapon());
-    System.out.println("NonPlayerCharacter Armor: " + getArmor());
+    System.out.println("Name: " + getName() +
+            "\nHealth: " + getHealth() +
+            "\nGold: $" + getGold() +
+            "\nWeapon: " + getWeapon() +
+            "\nArmor: " + getArmor());
   }
+
 
   public int attack(PlayerCharacter pc) {
     int modifier = 0;

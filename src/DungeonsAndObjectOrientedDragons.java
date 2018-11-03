@@ -24,7 +24,6 @@ class DungeonsAndObjectOrientedDragons {
    * knight will take the treasure and update his gold_ member variable.
    * */
   private static void dungeonOfInfiniteLoops() {
-
     System.out.printf("\nHow many monsters would you like %s to fight?\n", pc.getName());
     Scanner input = new Scanner(System.in);
     int numberOfNonPlayerCharacters = 0;
@@ -34,7 +33,6 @@ class DungeonsAndObjectOrientedDragons {
     } catch (Exception ex) {
       System.out.println("Enter a number.");
     }
-
 
     generateNonPlayerCharacters(numberOfNonPlayerCharacters);
 
@@ -47,39 +45,45 @@ class DungeonsAndObjectOrientedDragons {
   /**
    * Displays short welcome message when the user starts the program
    */
-  private static void welcomeMessage() {
+  private static void displayWelcomeMessage() {
     System.out.print("Welcome to Dungeons and Object Oriented Dragons!" +
             "You are a brave knight who is about to enter the Dungeon of Infinite Loops.");
   }
 
-  private static void buildMonsterArray(int numEnemies) {
-    for (int i = 0; i < numEnemies; ++i) {
-    }
+  private static int chooseInteractiveOrAutomaticCreation() {
+    System.out.println("Choose one of the following:" +
+            "\n1) Interactively create a new knight" +
+            "\n2) Automatically generate a new knight" +
+            "Your choice, my liege? ");
+    Scanner input = new Scanner(System.in);
+    int userSelection = input.nextInt();
+
+    return userSelection;
   }
 
   /**
    * Auto-generates a PC, including the name
    */
-  private void generatePlayerCharacter() {
+  private static void createPlayerCharacterAutomatically() {
     PlayerCharacter pc = new PlayerCharacter();
-    pc.generateName();
-    pc.generateWeapon();
-    pc.generateArmor();
+    pc.chooseNameAutomatically();
+    pc.chooseWeaponAutomatically();
+    pc.chooseArmorAutomatically();
   }
 
   /**
-   * Allows user to enter a name and choose weapon, but auto-generates the rest
+   * Allows user to enter a name, choose a weapon and armor, but auto-generates the rest
    */
-  private static void createPlayerCharacterManually() {
+  private static void createPlayerCharacterInteractively() {
     PlayerCharacter pc = new PlayerCharacter();
-    pc.generateName();
 
     System.out.print("Enter the name of your knight: ");
     private final Scanner input = new Scanner(System.in);
     String name = input.nextLine();
     pc.setName(name);
-    pc.chooseWeapon();
-    pc.generateArmor();
+
+    pc.chooseWeaponInteractively();
+    pc.chooseArmorInteractively();
   }
 
   /**
@@ -87,10 +91,7 @@ class DungeonsAndObjectOrientedDragons {
    * @param numberOfNonPlayerCharacters
    */
   public static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
-
     for (int i = 0; i < numberOfNonPlayerCharacters; ++i) {
-
-      // creates random NPC object for player to fight
       int randomInteger = ((int) ((Math.random() * 3) + 1));
 
       switch (randomInteger) {
@@ -115,14 +116,23 @@ class DungeonsAndObjectOrientedDragons {
    * */
   public static void main(String[] args) {
 
-    welcomeMessage();
+    displayWelcomeMessage();
 
     Scanner input = new Scanner(System.in);
     String playAgain = null; // must be initialized outside of the loop for scoping reasons
 
     do {
       NON_PLAYER_CHARACTER_ARRAY.clear();
-      createPlayerCharacterManually();
+
+      // player can create a new knight interactively or have the program automatically generate one
+      int userChoice = chooseInteractiveOrAutomaticCreation();
+      if (userChoice == 1) {
+        createPlayerCharacterInteractively();
+      }
+      else if (userChoice == 2) {
+        createPlayerCharacterAutomatically();
+      }
+
       dungeonOfInfiniteLoops();
 
       // after the fighting is complete
