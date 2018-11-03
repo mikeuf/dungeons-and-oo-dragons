@@ -27,21 +27,6 @@ public abstract class NonPlayerCharacter implements Character {
   final int defense = 0;
 
 
-
-
-  private enum Weapon {
-    // each weapon has a power level that determines damage
-    private final int power;
-    // stores a "human-readable" name for the weapon
-    private final String name;
-
-    Weapon(int power, String name) {
-      this.power = power;
-      this.name = name;
-    }
-  }
-
-
   NonPlayerCharacter() {
     generateWeapon();
     generateArmor();
