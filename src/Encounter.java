@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
-public class Battle {
+public class Encounter {
 
-  // EMERGENCY EMERGENCY MAY DAY MAY DAY
+  Encounter(PlayerCharacter pc, NonPlayerCharacter npc) {
 
-  Battle(Character opponent1, Character opponent2) {
+    System.out.printf("\n%s is bravely iterating through the Dungeon of Infinite Loops when\n" +
+            " a dreaded %s leaps out from the darkness, brandishing... %s\n", pc.getName(), npc.getName(), npc.getWeapon());
 
-  }
+// print pre-fight stats
+    System.out.print("\nMONSTER STATS:");
+    npc.printStats();
+    System.out.printf("\n%s STATS:", pc.getName());
+    pc.printStats();
 
-  // printstats
-  opponent1.printStats();
+       // The monsters always get first-strike since they are the attackers
 
-
-  // mainbattle
   // one guy attacks the other
     // other guy takes damage
 
@@ -20,90 +22,80 @@ public class Battle {
     // other guy takes damage
 
   // did anyone die? -> postBattle
+  // if the player is dead (from the last fight, break out of the loop)
+      if (k.getHealth() < 0) {
+    System.out.printf("\n%s has been vanquished before fighting all foes.\n" +
+            "Woah to the vanquished... \n", pc.getName());
 
   //postbattle
     // print message saying what happened
+    System.out.printf("\nThe %s makes off with %s's %d gold coins and donates them to\n" +
+                    " a charity that supports underprivileged %ss of Middle Earth.\n",
+            NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName(),
+            pc.getName(),
+            pc.getGold(),
+            NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName());
+    break;
+  }
     // exchange gold
     // if player died, ask if they want to restart
 
-
-  /**
-   * Manage battle between knights only (no monsters).
-   * Fight continues until someone's health drops to zero
-   */
-  private static void battle(PlayerCharacter k1, PlayerCharacter k2) {
-    int roundNumber = 0;
-
-    // print stats at beginning of reach round
-    do {
-      System.out.printf("\n*** ROUND %d ***", ++roundNumber);
-      System.out.printf("\nHEALTH LEVELS:\n" +
-              "%s: %d \n" +
-              "%s: %d \n", k1.getName(), k1.getHealth(), k2.getName(), k2.getHealth());
-    }
-    while ((k1.fight(k2) != 1) &&
-            (k2.fight(k1) != 1));
-
-    System.out.print("\nEnd of battle.\n");
-  }
 
   /**
    * Manage battle between knight and monster
    * Fight continues until someone's health drops to zero
    * Note: This is an overload of battle()
    */
-  private static void battle(PlayerCharacter k, NonPlayerCharacter e) {
+  private static void battle() {
     int roundNumber = 0;
-    Scanner input = new Scanner(System.in);
 
     do {
       System.out.print("\nPress Enter to continue...\n");
-      String anyKey = input.nextLine();
+      Scanner input = new Scanner(System.in);
+      String anyKey = null;
 
-      // print stats at beginning of reach round
+      try {
+        anyKey = input.nextLine();
+      } catch (Exception ex) {
+        System.out.println("An unexpected error occured: " + ex);
+      }
+
+      // print updated stats at beginning of reach round
       System.out.printf("\n*** ROUND %d ***", ++roundNumber);
       System.out.printf("\nHEALTH LEVELS:\n" +
               "%s: %d \n" +
-              "%s: %d \n", k.getName(), k.getHealth(), e.getName(), e.getHealth());
+              "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
+
+
+
+
+      // apply damage to opponent
+      pc.setDamage(damage);
+
+      // check to see if the opponent is dead
+      if (k.getHealth() < 0) {
+        System.out.printf("\n%s hath been slain by the %s!", pc.getName(), this.getName());
     }
-    while ((k.fight(e) != 1) &&
-            (e.fight(k) != 1));
+    while ((pc.attack(npc) != 1) &&
+            (npc.attack(pc) != 1));
 
     System.out.print("\nEnd of battle.\n");
   }
 
+  /*
   // fighting a PlayerCharacter
   public int fight(Character opponent) {
 
-        /* print battle-related messages and call the opponent's
+         print battle-related messages and call the opponent's
         setDamage() method
-         */
 
-    int modifier = 0;
-    System.out.printf("\nThe %s attacks %s with his %s! ",
-            this.getName(), k.getName(), this.getWeapon());
 
-    // calculate and report damage amount
-
-    // include difference in the weapon strength vs opponent armor strength
-    modifier = weapon.getPower() - k.getArmor().getDefense();
-
-    // damage is 5-13 hit points +/- the modifier
-    int damage = ((int) ((Math.random() * 8 + modifier + 5)));
-
-    System.out.printf("(DAMAGE: %d)\n", damage);
-
-    // apply damage to opponent
-    k.setDamage(damage);
-
-    // check to see if the opponent is dead
-    if (k.getHealth() < 0) {
-      System.out.printf("\n%s hath been slain by the %s!", k.getName(), this.getName());
       return 1;
     }
 
     return 0;
   }
+  */
 
 
   /**
@@ -113,21 +105,21 @@ public class Battle {
     int modifier = 0;
 
     System.out.printf("\n%s strikes %s with his %s! ",
-            this.getName(), k.getName(), this.getWeapon());
+            this.getName(), pc.getName(), this.getWeapon());
     /*
      * when calculating damage amount include difference in the weapon strength vs opponent armor strength
      * damage is 5-13 hit points +/- the modifier
      */
-    modifier = getWeapon().getPower() - k.getArmor().getDefense();
+    modifier = getWeapon().getPower() - pc.getArmor().getDefense();
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
     System.out.printf("(DAMAGE: %d)\n", damage);
 
     // apply damage to opponent
-    k.setDamage(damage);
+    pc.setDamage(damage);
 
     // check to see if the opponent is dead
     if (k.getHealth() < 0) {
-      System.out.printf("\n%s hath been slain by %s!", k.getName(), this.getName());
+      System.out.printf("\n%s hath been slain by %s!", pc.getName(), this.getName());
       return 1;
     }
     return 0;

@@ -1,11 +1,11 @@
 interface Character {
-  // EMERGENCY EMERGENCY MAY DAY MAY DAY
-  enum Weapon {}
-  enum armor {}
+  enum Weapon {};
+ // enum Armor {};
 
   int attack(Character opponent);
   void printStats();
   void generateWeapon();
+  void generateArmor();
 
 
 }

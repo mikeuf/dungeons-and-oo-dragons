@@ -15,24 +15,15 @@ Armor type:
 
 public class Balrog extends NonPlayerCharacter {
 
-  // EMERGENCY EMERGENCY MAY DAY MAY DAY
-
-  enum Weapon {
-        /* the number next to the weapon is the damage multiplier.
-        Generally, "NOTHING" should not actually appear. */
-
-    NOTHING(1, "Nothing"),
+  /**
+   * Weapons available to Balrog
+   */
+  private enum Weapon {
+    // The number next to the weapon is the damage multiplier.
     FEARSOME_FISTS(2, "Fearsome fists"),
     FIERY_FLAIL(5, "Fiery flail");
 
-    private final int power_;
-    private final String mixedCaps_;
-
-    Weapon(int power, String mixedCaps) {
-      this.power_ = power;
-      this.mixedCaps_ = mixedCaps;
     }
-
 
     int getPower() {
       return power_;
@@ -42,6 +33,7 @@ public class Balrog extends NonPlayerCharacter {
       return mixedCaps_;
     }
   }
+
 
   enum Armor {
         /* the number next to the weapon is the defense multiplier.
@@ -62,8 +54,7 @@ public class Balrog extends NonPlayerCharacter {
   }
 
 
-  private Weapon weapon = Weapon.NOTHING;
-  private final Armor armor = Armor.ENCHANTED_HIDE;
+
 
 
   // constructor

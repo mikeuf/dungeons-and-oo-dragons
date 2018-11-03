@@ -29,12 +29,12 @@ public class PlayerCharacter implements Character {
    * These are the weapons available to the knights.
    * The number next to the weapon is a damage multiplier. A higher number means "more damage."
    * */
-  enum Weapon {
+  private enum Weapon {
     NOTHING(1, "Nothing"),
     SPEAR(2, "Spear"),
     WAR_HAMMER(3, "War Hammer"),
     LONG_SWORD(4, "Long Sword"),
-    BATTLE_AXE(5, "Battle Axe");
+    BATTLE_AXE(5, "Encounter Axe");
 
     private final int power_;
     private final String mixedCaps_;
@@ -84,7 +84,6 @@ public class PlayerCharacter implements Character {
    * */
   enum AutoName {
     SIR_LANCELOT("Sir Lancelot"),
-    SIR_ARTHUR("Sir Arthur"),
     SIR_LOIN("Sir Loin"),
     SIR_FRY("Sir Fry"),
     BARON_CRUMPET("Baron Crumpet"),
@@ -103,15 +102,14 @@ public class PlayerCharacter implements Character {
     }
   }
 
-
-  //setters
   public void setDamage(int damage) {
     setHealth(getHealth() - damage);
   }
 
-
-
-
+  @Override
+  public int attack(Character opponent) {
+    return 0;
+  }
 
   /**
    *  allow user to select weapon
@@ -121,7 +119,7 @@ public class PlayerCharacter implements Character {
     do {
       System.out.print("\nNow select your weapon! (Choose number):\n" +
               "1) Long Sword\n" +
-              "2) Battle Axe\n" +
+              "2) Encounter Axe\n" +
               "3) Spear\n" +
               "4) Warhammer\n" +
               "Your choice my liege? : ");
@@ -236,26 +234,22 @@ public class PlayerCharacter implements Character {
         break;
 
       case 3:
-        setName(AutoName.SIR_ARTHUR.getMixedCaps());
-        break;
-
-      case 4:
         setName(AutoName.SIR_LOIN.getMixedCaps());
         break;
 
-      case 5:
+      case 4:
         setName(AutoName.SIR_FRY.getMixedCaps());
         break;
 
-      case 6:
+      case 5:
         setName(AutoName.SIR_TIFICATE.getMixedCaps());
         break;
 
-      case 7:
+      case 6:
         setName(AutoName.LORD_VADER.getMixedCaps());
         break;
 
-      case 8:
+      case 7:
         setName(AutoName.GRAND_ADMIRAL_SNOWFLAKE.getMixedCaps());
         break;
 
@@ -278,43 +272,43 @@ public class PlayerCharacter implements Character {
     System.out.println("PlayerCharacter Armor: " + getArmor());
   }
 
-  private String getName() {
+  public String getName() {
     return name;
   }
 
-  private void setName(String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
-  private int getHealth() {
+  public int getHealth() {
     return health;
   }
 
-  private void setHealth(int health) {
+  public void setHealth(int health) {
     this.health = health;
   }
 
-  private int getAge() {
+  public int getAge() {
     return age;
   }
 
-  private void setAge(int age) {
+  public void setAge(int age) {
     this.age = age;
   }
 
-  private int getGold() {
+  public int getGold() {
     return gold;
   }
 
-  private void setGold(int gold) {
+  public void setGold(int gold) {
     this.gold = gold;
   }
 
-  private Weapon getWeapon() {
+  public Weapon getWeapon() {
     return weapon;
   }
 
-  private void setWeapon(Weapon weapon) {
+  public void setWeapon(Weapon weapon) {
     this.weapon = weapon;
   }
 
@@ -322,15 +316,15 @@ public class PlayerCharacter implements Character {
     return armor;
   }
 
-  private void setArmor(Armor armor) {
+  public void setArmor(Armor armor) {
     this.armor = armor;
   }
 
-  private int getFightOrder() {
+  public int getFightOrder() {
     return fightOrder;
   }
 
-  private void setFightOrder(int fightOrder) {
+  public void setFightOrder(int fightOrder) {
     this.fightOrder = fightOrder;
   }
 

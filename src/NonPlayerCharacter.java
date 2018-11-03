@@ -15,15 +15,31 @@ knight will take the treasure and update his gold_ member variable.
 
 public abstract class NonPlayerCharacter implements Character {
 
-  // EMERGENCY EMERGENCY MAY DAY MAY DAY
-
   // placeholders that will be extended by subclasses
   String name;
+  //private Weapon weapon;
+  Armor armor;
   int health;
   int gold;
   final int defense = 0;
 
+
+  private enum Weapon {
+    // each weapon has a power level that determines damage
+    private final int power;
+    // stores a "human-readable" name for the weapon
+    private final String name;
+
+    Weapon(int power, String name) {
+      this.power = power;
+      this.name = name;
+    }
+  }
+
+
   NonPlayerCharacter() {
+    generateWeapon();
+    generateArmor();
     this.health = 0;
     this.gold = 0;
   }
@@ -43,7 +59,20 @@ public abstract class NonPlayerCharacter implements Character {
     System.out.println("NonPlayerCharacter Armor: " + getArmor());
   }
 
+  public int attack(PlayerCharacter pc) {
+    int modifier = 0;
+    System.out.printf("\nThe %s attacks %s with his %s! ", name, pc.getName(), weapon);
 
+    // calculate and report damage amount
+
+    // include difference in the weapon strength vs opponent armor strength
+    modifier = weapon.getPower() - pc.getArmor().getDefense();
+
+    // damage is 5-13 hit points +/- the modifier
+    int damage = ((int) ((Math.random() * 8 + modifier + 5)));
+
+    System.out.printf("(DAMAGE: %d)\n", damage);
+  }
 
   // setters
   public abstract void generateWeapon();

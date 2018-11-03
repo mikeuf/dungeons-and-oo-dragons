@@ -34,6 +34,7 @@ public class Bugbear extends NonPlayerCharacter {
     }
 
 
+
     int getPower() {
       return power_;
     }
