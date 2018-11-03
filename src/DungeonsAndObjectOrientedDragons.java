@@ -12,10 +12,10 @@ import java.util.Scanner;
 class DungeonsAndObjectOrientedDragons {
 
   /** stores player character (PC) for fighting */
-  private static PlayerCharacter pc;
+  protected static PlayerCharacter pc;
 
   /** stores non-player characters (NPCs) for fighting */
-  private static ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
+  protected static ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
   /**
    * Character can choose number of random enemies to generate.

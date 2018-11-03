@@ -38,6 +38,21 @@ public abstract class NonPlayerCharacter implements Character {
 
   // public abstract int fight(PlayerCharacter k);
 
+  @Override
+  public int attack(PlayerCharacter pc) {
+    System.out.printf("\n%s strikes the %s with his %s! ", name, pc.getName(), myWeapon.getName());
+    /*
+     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
+     * damage is 5-13 hit points +/- the modifier
+     */
+    int modifier = myWeapon.getAttackPower() - pc.getDefenseLevel();
+
+    int damage = ((int)(((Math.random() * 8) + modifier + 5)));
+
+    return damage;
+  }
+
+
 
   @Override
   public void printStats() {
@@ -49,20 +64,6 @@ public abstract class NonPlayerCharacter implements Character {
   }
 
 
-  public int attack(PlayerCharacter pc) {
-    int modifier = 0;
-    System.out.printf("\nThe %s attacks %s with his %s! ", name, pc.getName(), weapon);
-
-    // calculate and report damage amount
-
-    // include difference in the weapon strength vs opponent armor strength
-    modifier = weapon.getPower() - pc.getArmor().getDefense();
-
-    // damage is 5-13 hit points +/- the modifier
-    int damage = ((int) ((Math.random() * 8 + modifier + 5)));
-
-    System.out.printf("(DAMAGE: %d)\n", damage);
-  }
 
   // setters
   public abstract void generateWeapon();
@@ -85,6 +86,9 @@ public abstract class NonPlayerCharacter implements Character {
     return this.gold;
   }
 
+  public int getDefenseLevel() {
+    return myArmor.getDefenseLevel();
+  }
 
   public String getWeapon() {
     return "";

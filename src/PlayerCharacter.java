@@ -32,18 +32,17 @@ public class PlayerCharacter implements Character {
 
   @Override
   public int attack(NonPlayerCharacter npc) {
-    System.out.printf("\n%s strikes the %s with his %s! ", name, npc.getName(), weapon);
-
+    System.out.printf("\n%s strikes the %s with his %s! ", name, npc.getName(), myWeapon.getName());
     /*
      * when calculating damage amount include difference in the weapon strength vs opponent armor strength
      * damage is 5-13 hit points +/- the modifier
      */
-    int modifier = weapon.get(weapon.) - monst.defense;
+    int modifier = myWeapon.getAttackPower() - npc.getDefenseLevel();
 
-    int damage = ((int) ((Math.random() * 8 + modifier + 5)));
+    int damage = ((int)(((Math.random() * 8) + modifier + 5)));
+    System.out.printf("\nDAMAGE: ", damage);
 
-    System.out.printf("(DAMAGE: %d)\n", damage);
-    return 0;
+    return damage;
   }
 
   /**
@@ -228,6 +227,10 @@ public class PlayerCharacter implements Character {
     this.gold = gold;
   }
 
+  public int getDefenseLevel() {
+    return myArmor.getDefenseLevel();
+  }
+
   public String getWeapon() {
     return weapon.;
   }
@@ -235,6 +238,7 @@ public class PlayerCharacter implements Character {
   public Armor getArmor() {
     return armor;
   }
+
 
   public void setArmor(Armor armor) {
     this.armor = armor;

@@ -1,7 +1,7 @@
   public class Armor {
 
     private String name;
-    private int defenceLevel;
+    private int defenseLevel;
 
     public String getName() {
       return name;
@@ -12,11 +12,11 @@
     }
 
     public int getDefenseLevel() {
-      return defenceLevel;
+      return defenseLevel;
     }
 
-    public void setDefenseLevel(int defenceLevel) {
-      this.defenceLevel = defenceLevel;
+    public void setDefenseLevel(int defenseLevel) {
+      this.defenseLevel = defenseLevel;
     }
   }
 
