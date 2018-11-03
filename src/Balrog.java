@@ -15,6 +15,8 @@ Armor type:
 
 public class Balrog extends NonPlayerCharacter {
 
+  // EMERGENCY EMERGENCY MAY DAY MAY DAY
+
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.
         Generally, "NOTHING" should not actually appear. */

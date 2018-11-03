@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+// EMERGENCY EMERGENCY MAY DAY MAY DAY
+
 /**
  * DungeonsAndObjectOrientedDragons.java
  * Runs through a user interface that allows the user to create knights
@@ -11,14 +14,14 @@ import java.util.Scanner;
  * */
 class DungeonsAndObjectOrientedDragons {
 
-  /** stores knights for fighting */
+  /** stores player characters (PCs) for fighting */
   private static final ArrayList<PlayerCharacter> PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
-  /** stores monsters for fighting */
-  private static final ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = n  ew ArrayList<>();
+  /** stores non-player characters (NPCs) for fighting */
+  private static final ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
   /** Reinitialize knight array  */
-  private static void clearKnights() {
+  private static void clearPlayerCharacters() {
     PLAYER_CHARACTER_ARRAY.clear();
   }
 
@@ -36,9 +39,9 @@ class DungeonsAndObjectOrientedDragons {
   private static void dungeonOfInfiniteLoops() {
 
     // using the last knight generated
-    PlayerCharacter k = PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1);
+    PlayerCharacter pc = PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1);
 
-    System.out.printf("\nHow many enemies would you like %s to dance with?\n", k.getName());
+    System.out.printf("\nHow many enemies would you like %s to fight?\n", pc.getName());
     Scanner input = new Scanner(System.in);
     int numEnemies = input.nextInt();
 
@@ -50,19 +53,19 @@ class DungeonsAndObjectOrientedDragons {
       numNotAnInt.getMessage();
     }
 
-    // loop through each monster encounter
+    // loop through each NPC encounter
     for (int i = 0; i < (NON_PLAYER_CHARACTER_ARRAY.size()); ++i) {
 
       // if the player is dead (from the last fight, break out of the loop)
       if (k.getHealth() < 0) {
         System.out.printf("\n%s has been vanquished before fighting all foes.\n" +
-                "Woah to the vanquished... \n", k.getName());
+                "Woah to the vanquished... \n", pc.getName());
 
         System.out.printf("\nThe %s makes off with %s's %d gold coins and donates them to\n" +
                         " a charity that supports underprivileged %ss of Middle Earth.\n",
                 NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName(),
-                k.getName(),
-                k.getGold(),
+                pc.getName(),
+                pc.getGold(),
                 NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName());
         break;
       }
@@ -71,18 +74,18 @@ class DungeonsAndObjectOrientedDragons {
       NonPlayerCharacter e = NON_PLAYER_CHARACTER_ARRAY.get(i);
 
       // each monster class has multiple possible attacks
-      e.generateWeapon();
+      npc.generateWeapon();
 
       System.out.printf("\n%s is merrily traversing the Dungeon of Infinite Loops when a dreaded %s leaps out\n" +
-              " from the darkness, brandishing... %s\n", k.getName(), e.getName(), e.getWeapon());
+              " from the darkness, brandishing... %s\n", pc.getName(), e.getName(), e.getWeapon());
 
       // print stats for monster and knight
       System.out.printf("\n*** FIGHT %d of %d ***\n", (i + 1), NON_PLAYER_CHARACTER_ARRAY.size());
       System.out.print("\nMONSTER STATS:");
-      e.printStats();
+      npc.printStats();
 
-      System.out.printf("\n%s STATS:", k.getName());
-      k.printStats();
+      System.out.printf("\n%s STATS:", pc.getName());
+      pc.printStats();
 
       // determine which knight goes first
       if (PLAYER_CHARACTER_ARRAY.size() > 0) {
@@ -101,112 +104,64 @@ class DungeonsAndObjectOrientedDragons {
    * Displays short welcome message when the user starts the program
    */
   private static void welcomeMessage() {
-    System.out.print("\nWelcome to Dungeons and Object Oriented Dragons (with Random-NonPlayerCharacter-Matic)!\n");
+    System.out.print("Welcome to Dungeons and Object Oriented Dragons!" +
+            "You are a brave knight who is about to enter the Dungeon of Infinite Loops.");
   }
 
   private static void buildMonsterArray(int numEnemies) {
     for (int i = 0; i < numEnemies; ++i) {
-      NON_PLAYER_CHARACTER_ARRAY.add(getRandomMonster());
     }
   }
 
-
-  public void setName() {
-    System.out.print("Enter the name of your PlayerCharacter: ");
-    private final Scanner input = new Scanner(System.in);
-    setName(input.nextLine());
-  }
-
   /**
-   * Auto-generates a knight, including the name
+   * Auto-generates a PC, including the name
    */
-  private static void createKnightAutomatically() {
-    PLAYER_CHARACTER_ARRAY.add(new PlayerCharacter());
-
-    /*
-     * these will auto-select from an enumerated list of names, weapons and armor.
-     * I didn't want to put any more methods into the constructor than I had to, so
-     * I put them here, instead.
-     */
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoName();
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).generateWeapon();
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoArmor();
+  private void generatePlayerCharacter() {
+    PlayerCharacter pc = new PlayerCharacter();
+    pc.generateName();
+    pc.generateWeapon();
+    pc.generateArmor();
   }
 
   /**
    * Allows user to enter a name and choose weapon, but auto-generates the rest
    */
-  private static void createKnightManually() {
-    PLAYER_CHARACTER_ARRAY.add(new PlayerCharacter());
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setName();
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setWeapon();
-    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoArmor();
+  private static void createPlayerCharacterManually() {
+    PlayerCharacter pc = new PlayerCharacter();
+    pc.generateName();
+
+    System.out.print("Enter the name of your knight: ");
+    private final Scanner input = new Scanner(System.in);
+    String name = input.nextLine();
+    pc.setName(name);
+    pc.chooseWeapon();
+    pc.generateArmor();
   }
 
-  public static NonPlayerCharacter getRandomMonster() {
+  public void generateNonPlayerCharacter(int numberOfNonPlayerCharacters) {
 
-    // creates random monster object for knight to fight
-    System.out.print("\ngetRandomMonster()\n");
-    int monsterChooser = ((int) ((Math.random() * 3) + 1));
+    for (int i = 0; i < numberOfNonPlayerCharacters; ++i) {
 
-    switch (monsterChooser) {
-      case 1: {
-        return new Hobgoblin();
+      // creates random NPC object for player to fight
+      int randomInteger = ((int) ((Math.random() * 3) + 1));
+
+      switch (randomInteger) {
+        case 1: {
+          NON_PLAYER_CHARACTER_ARRAY.add(new Hobgoblin());
+        }
+        case 2: {
+          NON_PLAYER_CHARACTER_ARRAY.add(new Bugbear());
+        }
+        case 3: {
+          NON_PLAYER_CHARACTER_ARRAY.add(new Balrog());
+        }
+        default:
+          System.out.print("\nError while generating monster. Exiting\n");
+          System.exit(1);
       }
-      case 2: {
-        return new Bugbear();
-      }
-      case 3: {
-        return new Balrog();
-      }
-      default:
-        System.out.print("\nError while generating monster. Exiting\n");
     }
-// should not get here -- but adding this to satisfy the return value requirement
-    return new Hobgoblin();
   }
 
-
-  /**
-   * When the user indicates, at the main menu, that they want to fight another night, this gives
-   * them a chance to generate an opponent, either automatically, or manually.
-   * Once a knight has been created, the stats are printed and the battle begins
-   */
-  private static void knightFight() {
-    Scanner input = new Scanner(System.in);
-    String response = "";
-
-    createKnightAutomatically();
-
-    System.out.print("\nHere are the pre-fight stats for the knights:\n");
-
-    for (int i = 0; i < PLAYER_CHARACTER_ARRAY.size(); ++i) {
-      System.out.printf("\n*** PlayerCharacter %d ***", (i + 1));
-      PLAYER_CHARACTER_ARRAY.get(i).printStats();
-    }
-
-    do {
-      System.out.print("\nPress any key to begin the fight.");
-      response = input.nextLine();
-
-
-      // determine which knight goes first
-      if (PLAYER_CHARACTER_ARRAY.size() > 1) {
-        coinToss(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1));
-      } else {
-        System.out.print("\nERROR: PLAYER_CHARACTER_ARRAY is smaller than expected. Exiting...");
-      }
-
-      // start the actual battle
-      if (PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2).getFightOrder() == 1) {
-        battle(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1));
-      } else {
-        battle(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2));
-      }
-    }
-    while ((!(response.equalsIgnoreCase("y")) &&
-            (!(response.equalsIgnoreCase("n")))));
-  } // end knightFight()
 
   /*
    * main() runs through the general user interface script
@@ -222,33 +177,14 @@ class DungeonsAndObjectOrientedDragons {
     welcomeMessage();
 
     do {
-      clearKnights();
+      clearPlayerCharacters();
       clearEnemies();
-      createKnightManually();
+      createPlayerCharacterManually();
 
-      System.out.println("What would you like to do?");
-      System.out.println("1) Enter the Dungeon of Infinite Loops (fight random monsters).");
-      System.out.println("2) Fight another knight.");
-      System.out.println("3) Exit program.");
 
-      // get user selection
-      try {
-        menu1Choice = input.nextInt();
-      }
-      catch (Exception ex) {
-        System.out.println("This menu only accepts integers.\n" + "(" + ex + ")");
-      }
 
-      if (menu1Choice == 1) {
-        dungeonOfInfiniteLoops();
-      } else if (menu1Choice == 2) {
-        knightFight();
-      } else if (menu1Choice == 3) {
-        System.out.print("\nExiting program ...\n");
-        System.exit(0);
-      } else {
-        System.out.println("Please enter exactly 1, 2 or 3.");
-      }
+
+
 
       // after the fighting is complete
       System.out.print("\nPlay again? (y/n): ");

@@ -14,6 +14,9 @@ knight will take the treasure and update his gold_ member variable.
 
 
 public abstract class NonPlayerCharacter implements Character {
+
+  // EMERGENCY EMERGENCY MAY DAY MAY DAY
+
   // placeholders that will be extended by subclasses
   String name;
   int health;

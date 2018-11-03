@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Battle {
 
+  // EMERGENCY EMERGENCY MAY DAY MAY DAY
+
   Battle(Character opponent1, Character opponent2) {
 
   }

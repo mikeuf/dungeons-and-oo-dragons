@@ -6,6 +6,8 @@
  * */
 public class PlayerCharacter implements Character {
 
+  // EMERGENCY EMERGENCY MAY DAY MAY DAY
+
   private String name = null;
   private int health = 0;
   private int age = 0;
@@ -114,7 +116,7 @@ public class PlayerCharacter implements Character {
   /**
    *  allow user to select weapon
    **/
-  public void setWeapon() {
+  public void chooseWeapon() {
     int choice = 0;
     do {
       System.out.print("\nNow select your weapon! (Choose number):\n" +
@@ -192,7 +194,7 @@ public class PlayerCharacter implements Character {
     }
   }
 
-  public void setAutoArmor() {
+  public void generateArmor() {
     /* auto select armor for auto generated knights */
 
     int choice = ((int) ((Math.random() * 4) + 1));
@@ -219,7 +221,7 @@ public class PlayerCharacter implements Character {
     }
   }
 
-  public void setAutoName() {
+  public void generateName() {
     /* auto select name for auto generated knights */
 
     int choice = ((int) ((Math.random() * 8) + 1));
