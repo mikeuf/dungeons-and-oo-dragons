@@ -2,33 +2,33 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * KnightDriver.java
+ * DungeonsAndObjectOrientedDragons.java
  * Runs through a user interface that allows the user to create knights
  * and have them fight random monsters or each other.
  *
  * @author Mike Black
  * @version 1.0
  * */
-class KnightDriver {
+class DungeonsAndObjectOrientedDragons {
 
   /** stores knights for fighting */
-  private static final ArrayList<Knight> knightArray = new ArrayList<>();
+  private static final ArrayList<PlayerCharacter> PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
   /** stores monsters for fighting */
-  private static final ArrayList<Monster> monsterArray = new ArrayList<>();
+  private static final ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = n  ew ArrayList<>();
 
   /** Reinitialize knight array  */
   private static void clearKnights() {
-    knightArray.clear();
+    PLAYER_CHARACTER_ARRAY.clear();
   }
 
   /** Reinitialize monster array */
   private static void clearEnemies() {
-    monsterArray.clear();
+    NON_PLAYER_CHARACTER_ARRAY.clear();
   }
 
   /**
-   * Player can choose number of random enemies to generate.
+   * Character can choose number of random enemies to generate.
    * Each monster has multiple attack types, with different damage multipliers. The weapons are selected at random.
    * Each of the enemies has a random amount of treasure. After each battle, the player
    * knight will take the treasure and update his gold_ member variable.
@@ -36,7 +36,7 @@ class KnightDriver {
   private static void dungeonOfInfiniteLoops() {
 
     // using the last knight generated
-    Knight k = knightArray.get(knightArray.size() - 1);
+    PlayerCharacter k = PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1);
 
     System.out.printf("\nHow many enemies would you like %s to dance with?\n", k.getName());
     Scanner input = new Scanner(System.in);
@@ -51,7 +51,7 @@ class KnightDriver {
     }
 
     // loop through each monster encounter
-    for (int i = 0; i < (monsterArray.size()); ++i) {
+    for (int i = 0; i < (NON_PLAYER_CHARACTER_ARRAY.size()); ++i) {
 
       // if the player is dead (from the last fight, break out of the loop)
       if (k.getHealth() < 0) {
@@ -60,38 +60,38 @@ class KnightDriver {
 
         System.out.printf("\nThe %s makes off with %s's %d gold coins and donates them to\n" +
                         " a charity that supports underprivileged %ss of Middle Earth.\n",
-                monsterArray.get(i - 1).getName(),
+                NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName(),
                 k.getName(),
                 k.getGold(),
-                monsterArray.get(i - 1).getName());
+                NON_PLAYER_CHARACTER_ARRAY.get(i - 1).getName());
         break;
       }
 
       // assigning element to "e" for the sake of readability
-      Monster e = monsterArray.get(i);
+      NonPlayerCharacter e = NON_PLAYER_CHARACTER_ARRAY.get(i);
 
       // each monster class has multiple possible attacks
-      e.setAutoWeapon();
+      e.generateWeapon();
 
       System.out.printf("\n%s is merrily traversing the Dungeon of Infinite Loops when a dreaded %s leaps out\n" +
               " from the darkness, brandishing... %s\n", k.getName(), e.getName(), e.getWeapon());
 
       // print stats for monster and knight
-      System.out.printf("\n*** FIGHT %d of %d ***\n", (i + 1), monsterArray.size());
+      System.out.printf("\n*** FIGHT %d of %d ***\n", (i + 1), NON_PLAYER_CHARACTER_ARRAY.size());
       System.out.print("\nMONSTER STATS:");
       e.printStats();
 
       System.out.printf("\n%s STATS:", k.getName());
-      k.printKnightStats();
+      k.printStats();
 
       // determine which knight goes first
-      if (knightArray.size() > 0) {
+      if (PLAYER_CHARACTER_ARRAY.size() > 0) {
 
         /* Start the battle
          * Note: The monsters always get first-strike since they are the attackers */
         battle(k, e);
       } else {
-        System.out.print("\nError: knightArray is unexpectedly empty. Exiting...");
+        System.out.print("\nError: PLAYER_CHARACTER_ARRAY is unexpectedly empty. Exiting...");
         System.exit(1);
       }
     }
@@ -101,105 +101,71 @@ class KnightDriver {
    * Displays short welcome message when the user starts the program
    */
   private static void welcomeMessage() {
-    System.out.print("\nWelcome to Dungeons and Object Oriented Dragons (with Random-Monster-Matic)!\n");
+    System.out.print("\nWelcome to Dungeons and Object Oriented Dragons (with Random-NonPlayerCharacter-Matic)!\n");
   }
 
   private static void buildMonsterArray(int numEnemies) {
     for (int i = 0; i < numEnemies; ++i) {
-      monsterArray.add(Monster.getRandomMonster());
+      NON_PLAYER_CHARACTER_ARRAY.add(getRandomMonster());
     }
+  }
+
+
+  public void setName() {
+    System.out.print("Enter the name of your PlayerCharacter: ");
+    private final Scanner input = new Scanner(System.in);
+    setName(input.nextLine());
   }
 
   /**
    * Auto-generates a knight, including the name
    */
   private static void createKnightAutomatically() {
-    knightArray.add(new Knight());
+    PLAYER_CHARACTER_ARRAY.add(new PlayerCharacter());
 
     /*
      * these will auto-select from an enumerated list of names, weapons and armor.
      * I didn't want to put any more methods into the constructor than I had to, so
      * I put them here, instead.
      */
-    knightArray.get(knightArray.size() - 1).setAutoName();
-    knightArray.get(knightArray.size() - 1).setAutoWeapon();
-    knightArray.get(knightArray.size() - 1).setAutoArmor();
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoName();
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).generateWeapon();
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoArmor();
   }
 
   /**
    * Allows user to enter a name and choose weapon, but auto-generates the rest
    */
   private static void createKnightManually() {
-    knightArray.add(new Knight());
-    knightArray.get(knightArray.size() - 1).setName();
-    knightArray.get(knightArray.size() - 1).setWeapon();
-    knightArray.get(knightArray.size() - 1).setAutoArmor();
+    PLAYER_CHARACTER_ARRAY.add(new PlayerCharacter());
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setName();
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setWeapon();
+    PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1).setAutoArmor();
   }
 
-  /**
-   * Randomly determine which knight attacks first using a "coin toss"
-   */
-  private static void coinToss(Knight knight1, Knight knight2) {
-    int coinToss = ((int) ((Math.random() * 2) + 1));
+  public static NonPlayerCharacter getRandomMonster() {
 
-    if (coinToss == 1) {
-      knight1.setFightOrder(1);
-      knight2.setFightOrder(2);
-      System.out.printf("\n%s wins the coin toss!\n", knight1.getName());
-    } else if (coinToss == 2) {
-      knight1.setFightOrder(2);
-      knight2.setFightOrder(1);
-      System.out.printf("\n%s wins the coin toss!", knight2.getName());
-    } else {
-      System.out.printf("\nError: coinToss returned unexpected value: %d\n", coinToss);
-      System.exit(1);
+    // creates random monster object for knight to fight
+    System.out.print("\ngetRandomMonster()\n");
+    int monsterChooser = ((int) ((Math.random() * 3) + 1));
+
+    switch (monsterChooser) {
+      case 1: {
+        return new Hobgoblin();
+      }
+      case 2: {
+        return new Bugbear();
+      }
+      case 3: {
+        return new Balrog();
+      }
+      default:
+        System.out.print("\nError while generating monster. Exiting\n");
     }
+// should not get here -- but adding this to satisfy the return value requirement
+    return new Hobgoblin();
   }
 
-  /**
-   * Manage battle between knights only (no monsters).
-   * Fight continues until someone's health drops to zero
-   */
-  private static void battle(Knight k1, Knight k2) {
-    int roundNumber = 0;
-
-    // print stats at beginning of reach round
-    do {
-      System.out.printf("\n*** ROUND %d ***", ++roundNumber);
-      System.out.printf("\nHEALTH LEVELS:\n" +
-              "%s: %d \n" +
-              "%s: %d \n", k1.getName(), k1.getHealth(), k2.getName(), k2.getHealth());
-    }
-    while ((k1.fight(k2) != 1) &&
-            (k2.fight(k1) != 1));
-
-    System.out.print("\nEnd of battle.\n");
-  }
-
-  /**
-   * Manage battle between knight and monster
-   * Fight continues until someone's health drops to zero
-   * Note: This is an overload of battle()
-   */
-  private static void battle(Knight k, Monster e) {
-    int roundNumber = 0;
-    Scanner input = new Scanner(System.in);
-
-    do {
-      System.out.print("\nPress Enter to continue...\n");
-      String anyKey = input.nextLine();
-
-      // print stats at beginning of reach round
-      System.out.printf("\n*** ROUND %d ***", ++roundNumber);
-      System.out.printf("\nHEALTH LEVELS:\n" +
-              "%s: %d \n" +
-              "%s: %d \n", k.getName(), k.getHealth(), e.getName(), e.getHealth());
-    }
-    while ((k.fight(e) != 1) &&
-            (e.fight(k) != 1));
-
-    System.out.print("\nEnd of battle.\n");
-  }
 
   /**
    * When the user indicates, at the main menu, that they want to fight another night, this gives
@@ -214,9 +180,9 @@ class KnightDriver {
 
     System.out.print("\nHere are the pre-fight stats for the knights:\n");
 
-    for (int i = 0; i < knightArray.size(); ++i) {
-      System.out.printf("\n*** Knight %d ***", (i + 1));
-      knightArray.get(i).printKnightStats();
+    for (int i = 0; i < PLAYER_CHARACTER_ARRAY.size(); ++i) {
+      System.out.printf("\n*** PlayerCharacter %d ***", (i + 1));
+      PLAYER_CHARACTER_ARRAY.get(i).printStats();
     }
 
     do {
@@ -225,17 +191,17 @@ class KnightDriver {
 
 
       // determine which knight goes first
-      if (knightArray.size() > 1) {
-        coinToss(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
+      if (PLAYER_CHARACTER_ARRAY.size() > 1) {
+        coinToss(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1));
       } else {
-        System.out.print("\nERROR: knightArray is smaller than expected. Exiting...");
+        System.out.print("\nERROR: PLAYER_CHARACTER_ARRAY is smaller than expected. Exiting...");
       }
 
       // start the actual battle
-      if (knightArray.get(knightArray.size() - 2).getFightOrder() == 1) {
-        battle(knightArray.get(knightArray.size() - 2), knightArray.get(knightArray.size() - 1));
+      if (PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2).getFightOrder() == 1) {
+        battle(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1));
       } else {
-        battle(knightArray.get(knightArray.size() - 1), knightArray.get(knightArray.size() - 2));
+        battle(PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 1), PLAYER_CHARACTER_ARRAY.get(PLAYER_CHARACTER_ARRAY.size() - 2));
       }
     }
     while ((!(response.equalsIgnoreCase("y")) &&

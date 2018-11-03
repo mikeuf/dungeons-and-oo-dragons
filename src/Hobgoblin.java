@@ -12,7 +12,7 @@ Armor type:
 
 */
 
-public class Hobgoblin extends Monster {
+public class Hobgoblin extends NonPlayerCharacter {
 
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.
@@ -58,21 +58,20 @@ public class Hobgoblin extends Monster {
 
   }
 
-  private Weapon weapon_ = Weapon.NOTHING;
-  private final Armor armor_ = Armor.GARBAGE_BAG;
+  private Weapon weapon = Weapon.NOTHING;
+  private final Armor armor = Armor.GARBAGE_BAG;
 
 
   // constructor
   public Hobgoblin() {
-    System.out.print("\nHobgoblin()\n");
-    name_ = "Hobgoblin";
-    health_ = (int) ((Math.random() * 10) + 5);
-    gold_ = (int) ((Math.random() * 100) + 10);
+    name = "Hobgoblin";
+    health = (int) ((Math.random() * 10) + 5);
+    gold = (int) ((Math.random() * 100) + 10);
   }
 
 
-  // fighting a Knight
-  public int fight(Knight k) {
+  // fighting a PlayerCharacter
+  public int fight(PlayerCharacter k) {
 
         /* print battle-related messages and call the opponent's
         setDamage() method
@@ -86,7 +85,7 @@ public class Hobgoblin extends Monster {
     // calculate and report damage amount
 
     // include difference in the weapon strength vs opponent armor strength
-    modifier = weapon_.getPower() - k.getArmor_().getDefense();
+    modifier = weapon.getPower() - k.getarmor().getDefense();
 
     // damage is 5-13 hit points +/- the modifier
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
@@ -106,16 +105,16 @@ public class Hobgoblin extends Monster {
   }
 
 
-  public void setAutoWeapon() {
+  public void generateWeapon() {
     /* auto select a weapon for auto generated knights */
     int choice = ((int) ((Math.random() * 2) + 1));
     switch (choice) {
       case 1:
-        weapon_ = Weapon.HOBSLAP;
+        weapon = Weapon.HOBSLAP;
         break;
 
       case 2:
-        weapon_ = Weapon.RUSTY_DAGGER;
+        weapon = Weapon.RUSTY_DAGGER;
         break;
 
       default:
@@ -127,23 +126,23 @@ public class Hobgoblin extends Monster {
 
   // getters
   public String getName() {
-    return this.name_;
+    return this.name;
   }
 
   public int getHealth() {
-    return this.health_;
+    return this.health;
   }
 
   public int getGold() {
-    return this.gold_;
+    return this.name;
   }
 
   public String getWeapon() {
-    return this.weapon_.getMixedCaps();
+    return this.weapon.getMixedCaps();
   }
 
   public String getArmor() {
-    return this.armor_.getMixedCaps();
+    return this.armor.getMixedCaps();
   }
 
 

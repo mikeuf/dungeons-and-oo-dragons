@@ -13,7 +13,7 @@ Armor type:
 */
 
 
-public class Bugbear extends Monster {
+public class Bugbear extends NonPlayerCharacter {
   enum Weapon {
         /* the number next to the weapon is the damage multiplier.
         Generally, "NOTHING" should not actually appear. */
@@ -58,19 +58,18 @@ public class Bugbear extends Monster {
 
   }
 
-  private Weapon weapon_ = Weapon.NOTHING;
-  private final Armor armor_ = Armor.TRASH_CAN_LID;
+  private Weapon weapon = Weapon.NOTHING;
+  private final Armor armor = Armor.TRASH_CAN_LID;
 
   // constructor
   public Bugbear() {
-    System.out.print("\nBugbear()\n");
-    this.name_ = "Bugbear";
-    this.health_ = (int) ((Math.random() * 30) + 20);
-    this.gold_ = (int) ((Math.random() * 200) + 20);
+    name = "Bugbear";
+    health = (int) ((Math.random() * 30) + 20);
+    gold = (int) ((Math.random() * 200) + 20);
   }
 
-  // fighting a Knight
-  public int fight(Knight k) {
+  // fighting a PlayerCharacter
+  public int fight(PlayerCharacter k) {
 
         /* print battle-related messages and call the opponent's
         setDamage() method
@@ -84,7 +83,7 @@ public class Bugbear extends Monster {
     // calculate and report damage amount
 
     // include difference in the weapon strength vs opponent armor strength
-    modifier = weapon_.getPower() - k.getArmor_().getDefense();
+    modifier = weapon.getPower() - k.getArmor().getDefense();
 
     // damage is 5-13 hit points +/- the modifier
     int damage = ((int) ((Math.random() * 8 + modifier + 5)));
@@ -104,16 +103,16 @@ public class Bugbear extends Monster {
   }
 
 
-  public void setAutoWeapon() {
+  public void generateWeapon() {
     /* auto select a weapon for auto generated knights */
     int choice = ((int) ((Math.random() * 2) + 1));
     switch (choice) {
       case 1:
-        weapon_ = Weapon.UNCLEAN_CLAWS;
+        weapon = Weapon.UNCLEAN_CLAWS;
         break;
 
       case 2:
-        weapon_ = Weapon.BUGBITE;
+        weapon = Weapon.BUGBITE;
         break;
 
       default:
@@ -125,23 +124,23 @@ public class Bugbear extends Monster {
 
   // getters
   public String getName() {
-    return this.name_;
+    return this.name;
   }
 
   public int getHealth() {
-    return this.health_;
+    return this.health;
   }
 
   public int getGold() {
-    return this.gold_;
+    return this.gold;
   }
 
   public String getWeapon() {
-    return this.weapon_.getMixedCaps();
+    return this.weapon.getMixedCaps();
   }
 
   public String getArmor() {
-    return this.armor_.getMixedCaps();
+    return this.armor.getMixedCaps();
   }
 
 
