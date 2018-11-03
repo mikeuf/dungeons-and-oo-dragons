@@ -10,14 +10,16 @@ import java.util.Scanner;
  * */
 public class PlayerCharacter implements Character {
   private String name;
+  private Weapon myWeapon;
+  private Armor myArmor;
   private int health;
   private int age;
   private int gold;
   private final int GOLD_MULTIPLIER = 100;
   private final int HEALTH_MULTIPLIER = 50;
   private final int AGE_MULTIPLIER = 47;
-  Map<String, Integer> weapon;
-  Map<String, Integer> armor;
+//  Map<String, Integer> weapon;
+  //Map<String, Integer> armor;
 
   /**
     * ctor automatically initializes some knight attributes if the knight is auto-generated
@@ -29,7 +31,18 @@ public class PlayerCharacter implements Character {
   }
 
   @Override
-  public int attack(Character opponent) {
+  public int attack(NonPlayerCharacter npc) {
+    System.out.printf("\n%s strikes the %s with his %s! ", name, npc.getName(), weapon);
+
+    /*
+     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
+     * damage is 5-13 hit points +/- the modifier
+     */
+    int modifier = weapon.get(weapon.) - monst.defense;
+
+    int damage = ((int) ((Math.random() * 8 + modifier + 5)));
+
+    System.out.printf("(DAMAGE: %d)\n", damage);
     return 0;
   }
 
@@ -65,13 +78,16 @@ public class PlayerCharacter implements Character {
   public void generateWeapon(int weaponNumber) {
     switch (weaponNumber) {
       case 1:
-        weapon.put("long sword", 4);
+        myWeapon.setName("long sword");
+        myWeapon.setAttackPower(4);
         break;
       case 2:
-        weapon.put("battle axe", 5);
+        myWeapon.setName("battle axe");
+        myWeapon.setAttackPower(5);
         break;
       case 3:
-        weapon.put("nunchuks", 3);
+        myWeapon.setName("nunchuks");
+        myWeapon.setAttackPower(3);
         break;
       default:
         System.out.print("\nError while choosing auto weapon\n");
@@ -118,13 +134,16 @@ public class PlayerCharacter implements Character {
   public void chooseArmorInteractively(int armorNumber) {
     switch (armorNumber) {
       case 1:
-        armor.put("chain mail", 3);
+        myArmor.setName("chain mail");
+        myArmor.setDefenseLevel(3);
         break;
       case 3:
-        armor.put("plate armor", 4);
+        myArmor.setName("chain mail");
+        myArmor.setDefenseLevel(4);
         break;
       case 4:
-        armor.put("mithril coat", 5);
+        myArmor.setName("mithril coat");
+        myArmor.setDefenseLevel(5);
         break;
       default:
         System.out.println("An unexpected error occurred while choosing armor. Exiting program.");
@@ -209,12 +228,8 @@ public class PlayerCharacter implements Character {
     this.gold = gold;
   }
 
-  public Weapon getWeapon() {
-    return weapon;
-  }
-
-  public void setWeapon(Weapon weapon) {
-    this.weapon = weapon;
+  public String getWeapon() {
+    return weapon.;
   }
 
   public Armor getArmor() {

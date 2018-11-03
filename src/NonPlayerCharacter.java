@@ -24,6 +24,8 @@ public abstract class NonPlayerCharacter implements Character {
   Armor armor;
   int health;
   int gold;
+  Weapon myWeapon;
+  Armor myArmor;
   final int defense = 0;
 
 

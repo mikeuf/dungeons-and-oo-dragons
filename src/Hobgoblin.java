@@ -15,6 +15,10 @@ public class Hobgoblin extends NonPlayerCharacter {
 
   public Hobgoblin() {
     name = "Hobgoblin";
+    myWeapon.setName("cast iron skillet");
+    myWeapon.setAttackPower(3);
+    myArmor.setName("metal trash can lid for a breastplate, suspended with bungee cords");
+    myArmor.setDefenseLevel(3);
     health = (int) ((Math.random() * HEALTH_MULTIPLIER) + 5);
     gold = (int) ((Math.random() * GOLD_MULTIPLIER) + 10);
   }
