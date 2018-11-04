@@ -1,5 +1,5 @@
 # Dungeons and Object Oriented Dragons
-This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented Programming concepts (OOP) such as abstract classes, interfaces and inheritence. In this game, the user can creates a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs) in the form of monsters.<br />
+testThis is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented Programming concepts (OOP) such as abstract classes, interfaces and inheritence. In this game, the user can creates a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs) in the form of monsters.<br />
 
 Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
  
