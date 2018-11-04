@@ -28,7 +28,7 @@ See **Figure 1** for a class diagram.<br />
 * The **NonPlayerCharacter** class is abstract and is extended by a few monster subclasses, like **Dragon**, **Hobgoblin**, and **Bugbear**.
 * The **DungeonsAndObjectOrientedDragons** class contains the main entry point and walks the player through the initial character creation.
 * The **Encounter** class manages the battles between the knights and the monsters.
-* The **PlayerCharacter** and **NonPlayerCharacter** each have **Weapon** and **Armor** objects.
+* The **PlayerCharacter** and **NonPlayerCharacter** each have their own **Weapon** and **Armor** objects.
 * All characters can attack and defend against attacks from other characters. 
 * When a character is slain, its gold is looted by the victor.
 
