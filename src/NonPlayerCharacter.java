@@ -11,27 +11,17 @@ Each of the enemies has a random amount of treasure. After each battle, the play
 knight will take the treasure and update his gold_ member variable.
 
 */
-
-
 public abstract class NonPlayerCharacter implements Character {
-
-  // placeholders that will be extended by subclasses
-  String name;
-  //private Weapon weapon;
-  Armor armor;
-  int health;
-  int gold;
-  Weapon myWeapon;
-  Armor myArmor;
-  final int defense = 0;
-
+  protected String name;
+  protected Weapon myWeapon;
+  protected Armor myArmor;
+  protected int health;
+  protected int gold;
 
   NonPlayerCharacter() {
     this.health = 0;
     this.gold = 0;
   }
-
-  // public abstract int fight(PlayerCharacter k);
 
   public int attack(PlayerCharacter pc) {
     System.out.printf("\nThe %s assails %s with its %s, ", name, pc.getName(), myWeapon.getName());
@@ -50,8 +40,6 @@ public abstract class NonPlayerCharacter implements Character {
     return damage;
   }
 
-
-
   @Override
   public void printStats() {
     System.out.println("\nName: " + getName() +
@@ -61,25 +49,48 @@ public abstract class NonPlayerCharacter implements Character {
             "\nArmor: " + myArmor.getName());
   }
 
+  public int getDefenseLevel() {
+    return myArmor.getDefenseLevel();
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Weapon getMyWeapon() {
+    return myWeapon;
+  }
+
+  public void setMyWeapon(Weapon myWeapon) {
+    this.myWeapon = myWeapon;
+  }
+
+  public Armor getMyArmor() {
+    return myArmor;
+  }
+
+  public void setMyArmor(Armor myArmor) {
+    this.myArmor = myArmor;
+  }
+
+  public int getHealth() {
+    return health;
+  }
+
   public void setHealth(int health) {
     this.health = health;
   }
 
-  public String getName() {
-    return this.name;
-  }
-
-  public int getHealth() {
-    return this.health;
-  }
-
-
   public int getGold() {
-    return this.gold;
+    return gold;
   }
 
-  public int getDefenseLevel() {
-    return myArmor.getDefenseLevel();
+  public void setGold(int gold) {
+    this.gold = gold;
   }
 
 }

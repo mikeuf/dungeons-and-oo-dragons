@@ -45,7 +45,7 @@ class DungeonsAndObjectOrientedDragons {
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
       if ((NON_PLAYER_CHARACTER_ARRAY.size() > 0) &&
               (GameStatus.theCurrentGameStatus != GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST)) {
-        Encounter anEncounter = new Encounter(pc, npc);
+        Encounter currentEncounter = new Encounter(pc, npc);
 
       }
     }

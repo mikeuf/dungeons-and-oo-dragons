@@ -1,4 +1,3 @@
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -187,6 +186,18 @@ public class PlayerCharacter implements Character {
             "\nArmor: " + myArmor.getName());
   }
 
+  public int getDefenseLevel() {
+    return myArmor.getDefenseLevel();
+  }
+
+  public String getWeapon() {
+    return myWeapon.getName();
+  }
+
+  public String getArmor() {
+    return myArmor.getName();
+  }
+
   public String getName() {
     return name;
   }
@@ -203,11 +214,11 @@ public class PlayerCharacter implements Character {
     this.health = health;
   }
 
-  private int getAge() {
+  public int getAge() {
     return age;
   }
 
-  private void setAge(int age) {
+  public void setAge(int age) {
     this.age = age;
   }
 
@@ -219,22 +230,12 @@ public class PlayerCharacter implements Character {
     this.gold = gold;
   }
 
-  public int getDefenseLevel() {
-    return myArmor.getDefenseLevel();
-  }
+
+
+
 
   /*
-  public String getWeapon() {
-    return myWeapon.getName();
-  }
 
-  public Armor getArmor() {
-    return myArmor.getName();
-  }
-
-  public void setArmor(Armor armor) {
-    this.armor = armor;
-  }
   */
 }
 
