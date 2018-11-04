@@ -25,13 +25,12 @@ You may need a recent version of the Java Runtime Environment (JRE) to run this 
 See Figure 1 for a class diagram.<br />
 * The knights and the monsters are instances of the **PlayerCharacter** (PC) and **NonPlayerCharacter** (NPC) classes, respectively.
 * Both the **PlayerCharacter** and **NonPlayerCharacter** classes implement the **Character** Interface.
-* The **NonPlayerCharacter** class is abstract and is extended by a few monster subclasses, like Dragon, Hobgoblin, and Bugbear.
+* The **NonPlayerCharacter** class is abstract and is extended by a few monster subclasses, like **Dragon**, **Hobgoblin**, and **Bugbear**.
 * The **DungeonsAndObjectOrientedDragons** class contains the main entry point and walks the player through initial character creation.
 * The **Encounter** class manages the battles between the knights and the monsters.
-
-Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
- 
-All characters can defend against attacks from other characters. Depending on the defenseLevel of their armor, they can block a portion of the attack or cause the attacker to miss entirely.<br />
+* The **PlayerCharacter** and **NonPlayerCharacter** each have **Weapon** and **Armor** objects.
+* All characters can attack and defend against attacks from other characters. 
+* When a character is slain, its gold is looted by the victor.
 
 ## Class Design
 **Figure 1 - Class Diagram**
