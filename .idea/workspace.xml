@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f9fa2a7-d63f-4e5b-b764-edc00532335b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dungeons_and_oo_dragons_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStatus.CurrentGameStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStatus.CurrentGameStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NonPlayerCharacter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/NonPlayerCharacter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlayerCharacter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerCharacter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-tree.html" afterDir="false" />
-    </list>
+    <list default="true" id="2f9fa2a7-d63f-4e5b-b764-edc00532335b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -400,7 +372,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541322313056" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541347357994" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -475,7 +447,7 @@
       <workItem from="1541089392681" duration="42334000" />
       <workItem from="1541218598517" duration="8134000" />
       <workItem from="1541254850508" duration="31488000" />
-      <workItem from="1541294128911" duration="27157000" />
+      <workItem from="1541294128911" duration="27658000" />
     </task>
     <servers />
   </component>
@@ -485,7 +457,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109113000" />
+    <option name="totallyTimeSpent" value="109614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="28" width="2389" height="1310" extended-state="0" />
