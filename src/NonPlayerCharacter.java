@@ -65,7 +65,7 @@ public abstract class NonPlayerCharacter implements Character {
   }
 
   public void setHealth(int health) {
-    this.health -= health;
+    this.health = health;
   }
 
   // getters
