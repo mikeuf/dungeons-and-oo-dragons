@@ -4,7 +4,6 @@
  * A Bugbear is intended to be a "medium-strength" monster.
  */
 class Bugbear extends NonPlayerCharacter {
-
   private final int GOLD_MULTIPLIER = 200;
   private final int HEALTH_MULTIPLIER = 15;
 

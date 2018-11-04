@@ -1,9 +1,8 @@
 /**
  * Hobgoblin.java
  *
- * A hobgoblin is intended to be a weak monster.
- * It can also serve as the Foolish Consistency of Little Minds.
- **/
+ * A hobgoblin is intended to be a weak monster. It is also the Foolish Consistency of Little Minds.
+ */
 class Hobgoblin extends NonPlayerCharacter {
 
   private final int GOLD_MULTIPLIER = 100;

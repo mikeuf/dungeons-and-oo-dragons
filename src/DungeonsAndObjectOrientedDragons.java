@@ -3,27 +3,28 @@ import java.util.Scanner;
 
 /**
  * DungeonsAndObjectOrientedDragons.java
- * Runs through a user interface that allows the user to create knights
- * and have them fight random monsters or each other.
+ *
+ * This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented
+ * Programming concepts (OOP) such as abstract classes, interfaces and inheritence. In this game, the user can creates
+ * a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs)
+ * in the form of monsters.
  *
  * @author Mike Black
  * @version 1.0
- * */
+ */
 class DungeonsAndObjectOrientedDragons {
 
-  /** stores player character (PC) for fighting */
   private static PlayerCharacter pc;
 
-  /** stores non-player characters (NPCs) for fighting */
+  // stores the NPCs (monsters)
   private static final ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
   private static final Scanner keyboardInput = new Scanner(System.in);
+
   /**
-   * Character can choose number of random enemies to generate.
-   * Each monster has multiple attack types, with different damage multipliers. The weapons are selected at random.
-   * Each of the enemies has a random amount of treasure. After each battle, the player
-   * knight will take the treasure and update his gold_ member variable.
-   * */
+   * Enter the dungeon and choose how many random NPCs to generate (and fight). For each NPC, an separate
+   * encounter is generated.
+   */
   private static void dungeonOfInfiniteLoops() {
     System.out.printf("\nHow many monsters would you like %s to fight?\n", pc.getName());
     int numberOfNonPlayerCharacters = 0;
@@ -39,14 +40,13 @@ class DungeonsAndObjectOrientedDragons {
     System.out.println("\nNow entering the dungeon...");
 
     /*
-     * for each NPC, create an encounter
-     * Verify that the array is not empty and that the game is not lost before creating an encounter
+     * this creates an encounter for each NPC, But first verifies that the array is not empty and that
+     * the PlayerCharacter is actually alive before creating an encounter.
      */
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
-      if ((NON_PLAYER_CHARACTER_ARRAY.size() > 0) &&
+      if ((NON_PLAYER_CHARACTER_ARRAY.size() > 0) && //  null check
               (GameStatus.theCurrentGameStatus != GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST)) {
         Encounter currentEncounter = new Encounter(pc, npc);
-
       }
     }
   }
@@ -59,6 +59,12 @@ class DungeonsAndObjectOrientedDragons {
             "\nYou are a brave knight who is about to enter the Dungeon of Infinite Loops.");
   }
 
+  /**
+   * Allows the user to decide if they want to create a PlayerCharacter interactively or automatically generate one.
+   *
+   * @return The menu option that is selected by the user
+   */
+
   private static int chooseInteractiveOrAutomaticCreation() {
     System.out.println("\nChoose one of the following:" +
             "\n1) Interactively create a new knight" +
@@ -69,7 +75,7 @@ class DungeonsAndObjectOrientedDragons {
   }
 
   /**
-   * Auto-generates a PC, including the name
+   * Auto-generates a PlayerCharacter, including the name
    */
   private static void createPlayerCharacterAutomatically() {
     pc = new PlayerCharacter();
@@ -79,7 +85,7 @@ class DungeonsAndObjectOrientedDragons {
   }
 
   /**
-   * Allows user to enter a name, choose a weapon and armor, but auto-generates the rest
+   * Allows user to interactively create a PlayerCharacter
    */
   private static void createPlayerCharacterInteractively() {
     pc = new PlayerCharacter();
@@ -101,6 +107,7 @@ class DungeonsAndObjectOrientedDragons {
 
   /**
    * Populates the array with random NPCs based on the number that the player requests
+   *
    * @param numberOfNonPlayerCharacters the desired number of monsters to create
    */
   private static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
@@ -126,15 +133,14 @@ class DungeonsAndObjectOrientedDragons {
     }
   }
 
-  /*
-   * main() runs through the general user interface script
-   * */
   public static void main(String[] args) {
 
     displayWelcomeMessage();
 
     String playAgain; // must be initialized outside of the loop for scoping reasons
 
+    // the main loop that calls the functions that generate the characters and sends them to the dungeon. It loops
+    // until the game is over
     do {
       GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_IN_PROGRESS;
 
@@ -152,8 +158,7 @@ class DungeonsAndObjectOrientedDragons {
       System.out.println("\nYour knight has been created! Here are your stats:");
       pc.printStats();
 
-
-
+      // player enters the dungeon to fight monsters
       dungeonOfInfiniteLoops();
 
       // after the fighting is complete
@@ -163,6 +168,7 @@ class DungeonsAndObjectOrientedDragons {
       keyboardInput.nextLine();
       playAgain = keyboardInput.nextLine();
 
+      // determine if the player wants to continue playing or exit
       if (playAgain.equalsIgnoreCase("n")) {
         System.out.print("\nExiting program. I wish you good fortune in the wars to come...\n");
         System.exit(0);

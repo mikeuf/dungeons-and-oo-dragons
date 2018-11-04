@@ -1,23 +1,19 @@
-/*
-NonPlayerCharacter.java
-
-The NonPlayerCharacter class allows the play to select how many random monsters they
-want to fight in JavaBean Forest.
-
-Each monster has multiple attack types, with different damage multipliers. The
-weapons are selected at random.
-
-Each of the enemies has a random amount of treasure. After each battle, the player
-knight will take the treasure and update his gold_ member variable.
-
-*/
+/**
+ * NonPlayerCharacter.java
+ *
+ * A NonPlayerCharacter (NPC) is automatically generated as a monster to fight with the PlayerCharacter (PC). Each
+ * monster has multiple attack types, with different damage multipliers.
+ */
 public abstract class NonPlayerCharacter implements Character {
+
   protected String name;
   protected Weapon myWeapon;
   protected Armor myArmor;
   protected int health;
   protected int gold;
-  private final int ATTACK_MODIFIER = 3;
+
+  // These are used in the calculations to autogenerate the values for their respective fields
+  private final int ATTACK_MODIFIER = 4;
   private final int DEFENSE_MODIFIER = 1;
 
   NonPlayerCharacter() {
@@ -25,11 +21,13 @@ public abstract class NonPlayerCharacter implements Character {
     this.gold = 0;
   }
 
+  @Override
   public int attack() {
     int damage = (int)((Math.random() * myWeapon.getAttackPower()) + ATTACK_MODIFIER);
     return damage;
   }
 
+  @Override
   public int defend() {
     int defense = (int)((Math.random() * myArmor.getDefenseLevel()) + DEFENSE_MODIFIER);
     return defense;
@@ -37,7 +35,7 @@ public abstract class NonPlayerCharacter implements Character {
 
   @Override
   public void printStats() {
-    System.out.println("\nName: " + getName() +
+    System.out.println("Name: " + getName() +
             "\nHealth: " + getHealth() +
             "\nGold: $" + getGold() +
             "\nWeapon: " + myWeapon.getName() +
@@ -75,6 +73,4 @@ public abstract class NonPlayerCharacter implements Character {
   public void setGold(int gold) {
     this.gold = gold;
   }
-
 }
-

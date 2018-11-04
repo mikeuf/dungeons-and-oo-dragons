@@ -4,7 +4,6 @@
  * A Dragon is intended to be a powerful monster, with a lot of treasure.
  */
 class Dragon extends NonPlayerCharacter {
-
   private final int GOLD_MULTIPLIER = 500;
   private final int HEALTH_MULTIPLIER = 25;
 

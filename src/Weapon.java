@@ -1,6 +1,13 @@
+/**
+ * Weapon.java
+ *
+ * Used by characters to attack each other. Each weapon has a name and an attackPower that determines how much
+ * damage the weapon can cause.
+ */
 class Weapon {
 
   private String name;
+
   private int attackPower;
 
   Weapon(String name, int attackPower) {

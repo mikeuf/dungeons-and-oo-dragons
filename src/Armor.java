@@ -1,5 +1,8 @@
-  class Armor {
-
+/**
+ * Used by characters to defend against attacks. Each armor type has a name and a defenseLevel that determines the
+ * reduction in damage caused by other characters.
+ */
+class Armor {
     private String name;
     private int defenseLevel;
 
