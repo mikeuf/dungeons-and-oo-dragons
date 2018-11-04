@@ -3,7 +3,7 @@ In this text based game, the user creates a knight who fights against monsters i
 
 ## Table of Contents
 **[How to Run this Program](#how-to-run-this-program)**<br />
-**[Game Overview](#game-overview)**<br />
+**[Design Overview](#design-overview)**<br />
 **[Typical Output for Interactively creating a knight](#typical-output-for-interactively-creating-a-knight)**<br />
 **[Typical Output for Automatically creating a knight](#typical-output-for-automatically-creating-a-knight)**<br />
 
@@ -21,7 +21,7 @@ java -jar dungeons-and-oo-dragons.jar
 <br />
 You may need a recent version of the Java Runtime Environment (JRE) to run this program.<br />
 
-## Game Overview
+## Design Overview
 See **Figure 1** for a class diagram.<br />
 * The knights and the monsters are instances of the **PlayerCharacter** (PC) and **NonPlayerCharacter** (NPC) classes, respectively.
 * Both the **PlayerCharacter** and **NonPlayerCharacter** classes implement the **Character** Interface.
