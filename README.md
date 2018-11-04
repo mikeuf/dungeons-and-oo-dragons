@@ -15,9 +15,9 @@ https://github.com/mikeuf/dungeons-and-oo-dragons/raw/master/dist/dungeons-and-o
 You may receive a message from your browser stating that the program is "not commonly downloaded and may be dangerous," or something to this effect. Your browser should give you the option to either discard or keep the file.
 ### Running
 Start the program from a command line, using this syntax:<br />
-```
+~~~~
 java -jar dungeons-and-oo-dragons.jar
-```
+~~~~
 <br />
 You may need a recent version of the Java Runtime Environment (JRE) to run this program.<br />
 
@@ -37,7 +37,7 @@ See **Figure 1** for a class diagram.<br />
 
 ## Typical Output for Interactively creating a knight
 **Figure 2 - Interactively creating a knight**
-```
+~~~~
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
 
@@ -241,13 +241,15 @@ underprivileged Dragons of Middle Earth.
 Play again? (y/n): 
 
 Exiting program. I wish you good fortune in the wars to come...
-```
+~~~~
 <br />
 <br />
 <br />
-## Typical Output - Automatically creating a knight
+<br />
+##Typical Output for Automatically creating a knight
+**[Back to Top](#table-of-contents)**<br />
 **Figure 3 - Automatically creating a knight**
-```
+~~~~
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
 
@@ -400,7 +402,7 @@ Sir Loin now has 1053 gold coins.
 Play again? (y/n): n
 
 Exiting program. I wish you good fortune in the wars to come...
-```
+~~~~
 
 
 
