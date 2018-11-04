@@ -8,7 +8,7 @@ This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exerci
 
 ## How to Run this Program
 ### Downloading
-You can download an executable *.jar file from here:<br />
+You can download an executable \*.jar file from here:<br />
 https://github.com/mikeuf/dungeons-and-oo-dragons/raw/master/dist/dungeons-and-oo-dragons.jar<br />
 <br />
 You may receive a message from your browser stating that the program is "not commonly downloaded and may be dangerous," or something to this effect. Your browser should give you the option to either discard or keep the file.
@@ -19,7 +19,7 @@ java -jar dungeons-and-oo-dragons.jar
 ```
 <br />
 <br />
-**Note:** You will need a recent version of the Java Runtime Environment (JRE) to run this program.
+You will need a recent version of the Java Runtime Environment (JRE) to run this program.
 
 Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
  
