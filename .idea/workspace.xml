@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f9fa2a7-d63f-4e5b-b764-edc00532335b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/dungeons_and_oo_dragons_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStatus.CurrentGameStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStatus.CurrentGameStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NonPlayerCharacter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/NonPlayerCharacter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerCharacter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerCharacter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/allclasses-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/allclasses-noframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/package-tree.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,18 +51,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="JAVA/" value="4" />
+          <entry key="JAVA/" value="5" />
           <entry key="JAVA/Hobgoblin" value="2" />
           <entry key="JAVA/KnightDriver" value="2" />
           <entry key="JAVA/Monster" value="1" />
           <entry key="MODULES/mdl-dungeons-and-oo-dragons" value="5" />
-          <entry key="java" value="29" />
+          <entry key="class" value="1" />
+          <entry key="java" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="29" />
-          <entry key="UML" value="14" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="30" />
+          <entry key="UML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -57,9 +84,108 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="1235.0" y="1239.0">com</node>
+                <node x="195.0" y="1239.0">netscape</node>
+                <node x="280.0" y="1164.0">toolbarButtonGraphics</node>
+                <node x="158.0" y="1314.0">sun</node>
+                <node x="1023.0" y="1164.0">index-files</node>
+                <node x="804.0" y="921.0">Weapon</node>
+                <node x="482.0" y="779.0">Dragon</node>
+                <node x="0.0" y="921.0">GameStatus</node>
+                <node x="903.0" y="1239.0">apple</node>
+                <node x="791.0" y="1164.0">groovyjarjarasm</node>
+                <node x="0.0" y="1314.0">java</node>
+                <node x="241.0" y="779.0">Bugbear</node>
+                <node x="1070.0" y="1239.0">javax</node>
+                <node x="1045.0" y="921.0">Armor</node>
+                <node x="383.0" y="921.0">Encounter</node>
+                <node x="62.5" y="1023.0">GameStatus.CurrentGameStatus</node>
+                <node x="733.0" y="1239.0">javafx</node>
+                <node x="812.0" y="0.0">DungeonsAndObjectOrientedDragons</node>
+                <node x="562.0" y="1239.0">oracle</node>
+                <node x="0.0" y="779.0">Hobgoblin</node>
+                <node x="401.5" y="0.0">Character</node>
+                <node x="315.0" y="1314.0">org</node>
+                <node x="0.0" y="1239.0">resources</node>
+                <node x="1221.0" y="1164.0">META-INF</node>
+                <node x="470.0" y="1314.0">jdk</node>
+                <node x="385.0" y="1239.0">groovy</node>
+                <node x="478.0" y="146.0">PlayerCharacter</node>
+                <node x="245.0" y="278.0">NonPlayerCharacter</node>
+                <node x="0.0" y="1164.0">groovyjarjarcommonscli</node>
+                <node x="556.0" y="1164.0">groovyjarjarantlr</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="NonPlayerCharacter" target="Character">
+                  <point x="0.0" y="-159.5" />
+                  <point x="351.5" y="121.0" />
+                  <point x="444.25" y="121.0" />
+                  <point x="-42.75" y="48.0" />
+                </edge>
+                <edge source="Dragon" target="NonPlayerCharacter">
+                  <point x="0.0" y="-48.5" />
+                  <point x="592.5" y="754.0" />
+                  <point x="422.5" y="754.0" />
+                  <point x="71.0" y="159.5" />
+                </edge>
+                <edge source="Bugbear" target="NonPlayerCharacter">
+                  <point x="0.0" y="-48.5" />
+                  <point x="0.0" y="159.5" />
+                </edge>
+                <edge source="Hobgoblin" target="NonPlayerCharacter">
+                  <point x="0.0" y="-48.5" />
+                  <point x="110.5" y="754.0" />
+                  <point x="280.5" y="754.0" />
+                  <point x="-71.0" y="159.5" />
+                </edge>
+                <edge source="GameStatus.CurrentGameStatus" target="GameStatus">
+                  <point x="0.0" y="-48.0" />
+                  <point x="0.0" y="26.0" />
+                </edge>
+                <edge source="PlayerCharacter" target="Character">
+                  <point x="0.0" y="-291.5" />
+                  <point x="622.5" y="121.0" />
+                  <point x="529.75" y="121.0" />
+                  <point x="42.75" y="48.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.6642228739002932" x="709.1280353200884" y="662.0" />
+              <SelectedNodes>
+                <node>com</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlayerCharacter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
+            <state relative-caret-position="2760">
               <caret line="184" column="24" selection-start-line="184" selection-start-column="24" selection-end-line="184" selection-end-column="24" />
               <folding>
                 <element signature="e#5440#5441#0" expanded="true" />
@@ -115,44 +241,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Weapon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
-                <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Armor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#223#224#0" expanded="true" />
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dragon.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -182,7 +270,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
+            <state relative-caret-position="1187">
               <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
             </state>
           </provider>
@@ -191,8 +279,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
+            <state relative-caret-position="-924">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -200,11 +288,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameStatus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="94" selection-start-line="3" selection-start-column="94" selection-end-line="3" selection-end-column="94" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -279,7 +367,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="47" />
-    <option name="y" value="29" />
+    <option name="y" value="28" />
     <option name="width" value="2389" />
     <option name="height" value="1310" />
   </component>
@@ -312,9 +400,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541321389722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541322313056" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
@@ -384,7 +475,7 @@
       <workItem from="1541089392681" duration="42334000" />
       <workItem from="1541218598517" duration="8134000" />
       <workItem from="1541254850508" duration="31488000" />
-      <workItem from="1541294128911" duration="25936000" />
+      <workItem from="1541294128911" duration="27157000" />
     </task>
     <servers />
   </component>
@@ -394,10 +485,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107892000" />
+    <option name="totallyTimeSpent" value="109113000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="29" width="2389" height="1310" extended-state="0" />
+    <frame x="47" y="28" width="2389" height="1310" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -567,166 +658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="332.0" y="1553.0">com</node>
-            <node x="858.0" y="1478.0">netscape</node>
-            <node x="1290.0" y="949.0">Bugbear.Armor</node>
-            <node x="834.0" y="905.0">Hobgoblin.Weapon</node>
-            <node x="1413.0" y="680.0">NonPlayerCharacter.Weapon</node>
-            <node x="1492.0" y="1158.0">toolbarButtonGraphics</node>
-            <node x="456.0" y="602.5">PlayerCharacter.AutoName</node>
-            <node x="650.0" y="1553.0">sun</node>
-            <node x="1533.0" y="345.0">Character.Weapon</node>
-            <node x="1658.5" y="972.0">Balrog.Weapon</node>
-            <node x="0.0" y="1553.0">apple</node>
-            <node x="235.0" y="1478.0">groovyjarjarasm</node>
-            <node x="492.0" y="1553.0">java</node>
-            <node x="1167.0" y="602.0">Bugbear</node>
-            <node x="0.0" y="613.0">PlayerCharacter.Armor</node>
-            <node x="1629.0" y="691.5">Balrog</node>
-            <node x="167.0" y="1553.0">javax</node>
-            <node x="0.0" y="1158.0">Armor</node>
-            <node x="791.0" y="1158.0">Encounter</node>
-            <node x="606.0" y="949.0">Hobgoblin.Armor</node>
-            <node x="1574.0" y="1478.0">javafx</node>
-            <node x="260.0" y="1158.0">DungeonsAndObjectOrientedDragons</node>
-            <node x="1403.0" y="1478.0">oracle</node>
-            <node x="711.0" y="602.0">Hobgoblin</node>
-            <node x="1288.0" y="0.0">Character</node>
-            <node x="807.0" y="1553.0">org</node>
-            <node x="663.0" y="1478.0">resources</node>
-            <node x="467.0" y="1478.0">META-INF</node>
-            <node x="962.0" y="1553.0">jdk</node>
-            <node x="1226.0" y="1478.0">groovy</node>
-            <node x="167.09244791666652" y="168.0">PlayerCharacter</node>
-            <node x="228.0" y="602.5">PlayerCharacter.Weapon</node>
-            <node x="1048.0" y="1478.0">numNotAnInt</node>
-            <node x="1062.0" y="905.0">Bugbear.Weapon</node>
-            <node x="1278.0" y="222.5">NonPlayerCharacter</node>
-            <node x="1212.0" y="1158.0">groovyjarjarcommonscli</node>
-            <node x="0.0" y="1478.0">groovyjarjarantlr</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="NonPlayerCharacter" target="Character">
-              <point x="0.0" y="-137.5" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="Bugbear.Weapon" target="Bugbear">
-              <point x="0.0" y="-104.0" />
-              <point x="1166.0" y="880.0" />
-              <point x="1223.5" y="880.0" />
-              <point x="-56.5" y="126.5" />
-            </edge>
-            <edge source="NonPlayerCharacter.Weapon" target="NonPlayerCharacter">
-              <point x="0.0" y="-48.5" />
-              <point x="1511.0" y="582.0" />
-              <point x="1424.875" y="582.0" />
-              <point x="29.375" y="137.5" />
-            </edge>
-            <edge source="Hobgoblin" target="NonPlayerCharacter">
-              <point x="0.0" y="-126.5" />
-              <point x="824.0" y="572.0" />
-              <point x="1307.375" y="572.0" />
-              <point x="-88.125" y="137.5" />
-            </edge>
-            <edge source="Hobgoblin.Weapon" target="Hobgoblin">
-              <point x="0.0" y="-104.0" />
-              <point x="938.0" y="880.0" />
-              <point x="880.5" y="880.0" />
-              <point x="56.5" y="126.5" />
-            </edge>
-            <edge source="PlayerCharacter" target="Character">
-              <point x="0.0" y="-192.0" />
-              <point x="336.5924479166665" y="143.0" />
-              <point x="1323.8333333333335" y="143.0" />
-              <point x="-71.66666666666663" y="59.0" />
-            </edge>
-            <edge source="PlayerCharacter.Weapon" target="PlayerCharacter">
-              <point x="0.0" y="-126.0" />
-              <point x="332.0" y="582.0" />
-              <point x="336.5924479166665" y="582.0" />
-              <point x="0.0" y="192.0" />
-            </edge>
-            <edge source="Bugbear.Armor" target="Bugbear">
-              <point x="0.0" y="-60.0" />
-              <point x="1394.0" y="880.0" />
-              <point x="1336.5" y="880.0" />
-              <point x="56.5" y="126.5" />
-            </edge>
-            <edge source="Balrog.Weapon" target="Balrog">
-              <point x="0.0" y="-37.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="Hobgoblin.Armor" target="Hobgoblin">
-              <point x="0.0" y="-60.0" />
-              <point x="710.0" y="880.0" />
-              <point x="767.5" y="880.0" />
-              <point x="-56.5" y="126.5" />
-            </edge>
-            <edge source="PlayerCharacter.Armor" target="PlayerCharacter">
-              <point x="0.0" y="-115.5" />
-              <point x="104.0" y="582.0" />
-              <point x="223.59244791666652" y="582.0" />
-              <point x="-113.0" y="192.0" />
-            </edge>
-            <edge source="PlayerCharacter.AutoName" target="PlayerCharacter">
-              <point x="0.0" y="-126.0" />
-              <point x="573.5" y="582.0" />
-              <point x="449.5924479166665" y="582.0" />
-              <point x="113.0" y="192.0" />
-            </edge>
-            <edge source="Bugbear" target="NonPlayerCharacter">
-              <point x="0.0" y="-126.5" />
-              <point x="1280.0" y="582.0" />
-              <point x="1366.125" y="582.0" />
-              <point x="-29.375" y="137.5" />
-            </edge>
-            <edge source="Balrog" target="NonPlayerCharacter">
-              <point x="0.0" y="-37.0" />
-              <point x="1733.0" y="572.0" />
-              <point x="1483.625" y="572.0" />
-              <point x="88.125" y="137.5" />
-            </edge>
-            <edge source="Character.Weapon" target="Character">
-              <point x="0.0" y="-15.0" />
-              <point x="1583.5" y="143.0" />
-              <point x="1467.1666666666667" y="143.0" />
-              <point x="71.66666666666674" y="59.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6392092257001647" x="975.0" y="587.0" />
-          <SelectedNodes>
-            <node>com</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/numNotAnInt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -810,9 +745,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/dungeons-and-oo-dragons/Character.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-924">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1187">
+          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayerCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
+        <state relative-caret-position="2760">
           <caret line="184" column="24" selection-start-line="184" selection-start-column="24" selection-end-line="184" selection-end-column="24" />
           <folding>
             <element signature="e#5440#5441#0" expanded="true" />
@@ -839,29 +801,181 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Encounter.java">
+    <entry file="file://$PROJECT_DIR$/src/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="1235.0" y="1239.0">com</node>
+            <node x="195.0" y="1239.0">netscape</node>
+            <node x="280.0" y="1164.0">toolbarButtonGraphics</node>
+            <node x="158.0" y="1314.0">sun</node>
+            <node x="1023.0" y="1164.0">index-files</node>
+            <node x="804.0" y="921.0">Weapon</node>
+            <node x="482.0" y="779.0">Dragon</node>
+            <node x="0.0" y="921.0">GameStatus</node>
+            <node x="903.0" y="1239.0">apple</node>
+            <node x="791.0" y="1164.0">groovyjarjarasm</node>
+            <node x="0.0" y="1314.0">java</node>
+            <node x="241.0" y="779.0">Bugbear</node>
+            <node x="1070.0" y="1239.0">javax</node>
+            <node x="1045.0" y="921.0">Armor</node>
+            <node x="383.0" y="921.0">Encounter</node>
+            <node x="62.5" y="1023.0">GameStatus.CurrentGameStatus</node>
+            <node x="733.0" y="1239.0">javafx</node>
+            <node x="812.0" y="0.0">DungeonsAndObjectOrientedDragons</node>
+            <node x="562.0" y="1239.0">oracle</node>
+            <node x="0.0" y="779.0">Hobgoblin</node>
+            <node x="401.5" y="0.0">Character</node>
+            <node x="315.0" y="1314.0">org</node>
+            <node x="0.0" y="1239.0">resources</node>
+            <node x="1221.0" y="1164.0">META-INF</node>
+            <node x="470.0" y="1314.0">jdk</node>
+            <node x="385.0" y="1239.0">groovy</node>
+            <node x="478.0" y="146.0">PlayerCharacter</node>
+            <node x="245.0" y="278.0">NonPlayerCharacter</node>
+            <node x="0.0" y="1164.0">groovyjarjarcommonscli</node>
+            <node x="556.0" y="1164.0">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="NonPlayerCharacter" target="Character">
+              <point x="0.0" y="-159.5" />
+              <point x="351.5" y="121.0" />
+              <point x="444.25" y="121.0" />
+              <point x="-42.75" y="48.0" />
+            </edge>
+            <edge source="Dragon" target="NonPlayerCharacter">
+              <point x="0.0" y="-48.5" />
+              <point x="592.5" y="754.0" />
+              <point x="422.5" y="754.0" />
+              <point x="71.0" y="159.5" />
+            </edge>
+            <edge source="Bugbear" target="NonPlayerCharacter">
+              <point x="0.0" y="-48.5" />
+              <point x="0.0" y="159.5" />
+            </edge>
+            <edge source="Hobgoblin" target="NonPlayerCharacter">
+              <point x="0.0" y="-48.5" />
+              <point x="110.5" y="754.0" />
+              <point x="280.5" y="754.0" />
+              <point x="-71.0" y="159.5" />
+            </edge>
+            <edge source="GameStatus.CurrentGameStatus" target="GameStatus">
+              <point x="0.0" y="-48.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="PlayerCharacter" target="Character">
+              <point x="0.0" y="-291.5" />
+              <point x="622.5" y="121.0" />
+              <point x="529.75" y="121.0" />
+              <point x="42.75" y="48.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6642228739002932" x="709.1280353200884" y="662.0" />
+          <SelectedNodes>
+            <node>com</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="94" selection-start-line="3" selection-start-column="94" selection-end-line="3" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>dungeons-and-oo-dragons:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>dungeons-and-oo-dragons</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

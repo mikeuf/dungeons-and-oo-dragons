@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="dungeons-and-oo-dragons:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dungeons_and_oo_dragons_jar</output-path>
+    <root id="archive" name="dungeons-and-oo-dragons.jar">
+      <element id="module-output" name="dungeons-and-oo-dragons" />
+    </root>
+  </artifact>
+</component>
