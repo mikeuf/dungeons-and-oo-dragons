@@ -55,16 +55,13 @@ public class PlayerCharacter implements Character {
               "3) Nunchuks\n" +
               "Your choice my liege? : ");
       try {
-        System.out.println("did I get here?");
         userSelection = keyboardInput.nextInt();
-        System.out.println("did I get past it?");
       } catch (Exception ex) {
         System.out.println("Enter an integer between 1 and 3.\n" + "(" + ex + ")");
       }
     }
     while (userSelection < 0 || userSelection > 3);
 
-    System.out.println("how about here? userSelection: " + userSelection);
     generateWeapon(userSelection);
   }
 
@@ -75,7 +72,6 @@ public class PlayerCharacter implements Character {
    * @param weaponNumber
    */
   public void generateWeapon(int weaponNumber) {
-    System.out.println("generateWeapon()");
     switch (weaponNumber) {
       case 1:
         this.myWeapon = new Weapon("long sword", 4);
@@ -90,7 +86,6 @@ public class PlayerCharacter implements Character {
         System.out.print("\nError while choosing auto weapon\n");
         System.exit(1);
     }
-    System.out.println("ending generateWeapon()");
   }
 
   /**
@@ -120,7 +115,7 @@ public class PlayerCharacter implements Character {
     }
     while (userSelection < 0 || userSelection > 3);
 
-    generateWeapon (userSelection);
+    generateArmor(userSelection);
   }
 
   /**
@@ -133,10 +128,10 @@ public class PlayerCharacter implements Character {
       case 1:
         this.myArmor = new Armor("chain mail", 3);
         break;
-      case 3:
+      case 2:
         this.myArmor = new Armor("plate armor", 4);
         break;
-      case 4:
+      case 3:
         this.myArmor = new Armor("mithril coat", 5);
         break;
       default:

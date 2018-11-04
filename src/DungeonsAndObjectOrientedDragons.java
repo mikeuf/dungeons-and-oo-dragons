@@ -17,6 +17,7 @@ class DungeonsAndObjectOrientedDragons {
   /** stores non-player characters (NPCs) for fighting */
   protected static ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
+  private static Scanner keyboardInput = new Scanner(System.in);
   /**
    * Character can choose number of random enemies to generate.
    * Each monster has multiple attack types, with different damage multipliers. The weapons are selected at random.
@@ -25,11 +26,10 @@ class DungeonsAndObjectOrientedDragons {
    * */
   private static void dungeonOfInfiniteLoops() {
     System.out.printf("\nHow many monsters would you like %s to fight?\n", pc.getName());
-    Scanner input = new Scanner(System.in);
     int numberOfNonPlayerCharacters = 0;
 
     try {
-      numberOfNonPlayerCharacters = input.nextInt();
+      numberOfNonPlayerCharacters = keyboardInput.nextInt();
     } catch (Exception ex) {
       System.out.println("Enter a number.");
     }
@@ -55,8 +55,7 @@ class DungeonsAndObjectOrientedDragons {
             "\n1) Interactively create a new knight" +
             "\n2) Automatically generate a new knight" +
             "\n\nYour choice, my liege? ");
-    Scanner input = new Scanner(System.in);
-    int userSelection = input.nextInt();
+    int userSelection = keyboardInput.nextInt();
 
     return userSelection;
   }
@@ -65,7 +64,7 @@ class DungeonsAndObjectOrientedDragons {
    * Auto-generates a PC, including the name
    */
   private static void createPlayerCharacterAutomatically() {
-    PlayerCharacter pc = new PlayerCharacter();
+    pc = new PlayerCharacter();
     pc.chooseNameAutomatically();
     pc.chooseWeaponAutomatically();
     pc.chooseArmorAutomatically();
@@ -75,13 +74,12 @@ class DungeonsAndObjectOrientedDragons {
    * Allows user to enter a name, choose a weapon and armor, but auto-generates the rest
    */
   private static void createPlayerCharacterInteractively() {
-    PlayerCharacter pc = new PlayerCharacter();
+    pc = new PlayerCharacter();
 
     System.out.print("Enter the name of your knight: ");
-    final Scanner input = new Scanner(System.in);
     String name = null;
     try {
-      name = input.nextLine();
+      name = keyboardInput.nextLine();
     }
     catch (Exception ex) {
     System.out.println("An unexpected error occured: " + ex);
@@ -124,7 +122,6 @@ class DungeonsAndObjectOrientedDragons {
 
     displayWelcomeMessage();
 
-    Scanner input = new Scanner(System.in);
     String playAgain = null; // must be initialized outside of the loop for scoping reasons
 
     do {
@@ -145,7 +142,7 @@ class DungeonsAndObjectOrientedDragons {
       System.out.print("\nPlay again? (y/n): ");
 
       // running nextLine() twice to clear the buffer, so it doesn't auto trigger
-      playAgain = input.nextLine();
+      playAgain = keyboardInput.nextLine();
 
       if (playAgain.equalsIgnoreCase("n")) {
         System.out.print("\nExiting program... \n");

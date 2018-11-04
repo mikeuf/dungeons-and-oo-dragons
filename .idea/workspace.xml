@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f9fa2a7-d63f-4e5b-b764-edc00532335b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Balrog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Balrog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bugbear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bugbear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hobgoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hobgoblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NonPlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NonPlayerCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,12 +42,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="354" />
-          <entry key="java" value="20147" />
+          <entry key="java" value="20299" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="20147" />
+          <entry key="JAVA" value="20299" />
           <entry key="PLAIN_TEXT" value="354" />
         </counts>
       </usages-collector>
@@ -73,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PlayerCharacter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="136" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="136" selection-end-column="44" />
+            <state relative-caret-position="-2694">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4681#4682#0" expanded="true" />
@@ -170,7 +164,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hobgoblin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -188,11 +182,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="527">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,6 +216,7 @@
       <find>modifier</find>
       <find>e</find>
       <find>input</find>
+      <find>keyboardInput</find>
     </findStrings>
     <replaceStrings>
       <replace>monster</replace>
@@ -244,13 +242,13 @@
         <option value="$PROJECT_DIR$/src/Character.java" />
         <option value="$PROJECT_DIR$/src/Encounter.java" />
         <option value="$PROJECT_DIR$/src/NonPlayerCharacter.java" />
-        <option value="$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java" />
         <option value="$PROJECT_DIR$/src/Weapon.java" />
         <option value="$PROJECT_DIR$/src/Armor.java" />
-        <option value="$PROJECT_DIR$/src/PlayerCharacter.java" />
         <option value="$PROJECT_DIR$/src/Balrog.java" />
         <option value="$PROJECT_DIR$/src/Bugbear.java" />
         <option value="$PROJECT_DIR$/src/Hobgoblin.java" />
+        <option value="$PROJECT_DIR$/src/PlayerCharacter.java" />
+        <option value="$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java" />
       </list>
     </option>
   </component>
@@ -295,7 +293,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541290770481" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541292260796" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -366,7 +364,7 @@
       <updated>1541089389588</updated>
       <workItem from="1541089392681" duration="42334000" />
       <workItem from="1541218598517" duration="8134000" />
-      <workItem from="1541254850508" duration="28323000" />
+      <workItem from="1541254850508" duration="29813000" />
     </task>
     <servers />
   </component>
@@ -376,7 +374,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78791000" />
+    <option name="totallyTimeSpent" value="80281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="32" width="2389" height="1310" extended-state="0" />
@@ -397,8 +395,8 @@
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32922825" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.21182266" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.21182266" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.3998358" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32922825" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -451,6 +449,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/invalidDamageException.java" />
@@ -722,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Armor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -775,10 +778,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Balrog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bugbear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hobgoblin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayerCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="44" selection-start-line="136" selection-start-column="44" selection-end-line="136" selection-end-column="44" />
+        <state relative-caret-position="-2694">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4681#4682#0" expanded="true" />
@@ -803,24 +827,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Balrog.java">
+    <entry file="file://$PROJECT_DIR$/src/DungeonsAndObjectOrientedDragons.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bugbear.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hobgoblin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="527">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
