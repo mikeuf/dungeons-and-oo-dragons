@@ -8,7 +8,8 @@ public class Encounter {
     this.pc = pc;
     this.npc = npc;
     System.out.printf("\n%s is bravely iterating through the Dungeon of Infinite Loops when\n" +
-            " a dreaded %s leaps out from the darkness, brandishing a %s\n", pc.getName(), npc.getName(), npc.getWeapon());
+                    "a dreaded %s leaps out from the darkness, brandishing a %s\n",
+            pc.getName(), npc.getName(), npc.myWeapon.getName() + ".");
 
 // print pre-fight stats
     System.out.print("\nMONSTER STATS:");
@@ -75,7 +76,7 @@ public class Encounter {
 
   private void displayBattleWon () {
     System.out.printf("\nThe %s hath been slain by %s!" +
-            "\nThe %s had %d gold coins which %s is now pocketing.",
+                    "\nThe %s had %d gold coins which %s is now pocketing.",
             npc.getName(), pc.getName(), npc.getName(), npc.getGold(), npc.getName());
 
 // transfer the gold from the npc to the pc

@@ -74,10 +74,9 @@ class DungeonsAndObjectOrientedDragons {
    * Allows user to enter a name, choose a weapon and armor, but auto-generates the rest
    */
   private static void createPlayerCharacterInteractively() {
-    System.out.println("BeginCreatePlayerChar()");
     pc = new PlayerCharacter();
 
-    System.out.println("Enter the name of your knight: ");
+    System.out.println("\nEnter the name of your knight: ");
     String name = null;
     try {
       keyboardInput.nextLine(); // advancing to avoid repeat of previous entry

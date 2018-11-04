@@ -49,11 +49,11 @@ public class PlayerCharacter implements Character {
   public void chooseWeaponInteractively() {
     int userSelection = 0;
     do {
-      System.out.println("Select your weapon! (Choose number):\n" +
+      System.out.println("\nSelect your weapon! (Choose number):\n" +
               "1) Long Sword\n" +
               "2) Battle Axe\n" +
               "3) Nunchuks\n" +
-              "Your choice my liege? : ");
+              "\nYour choice my liege?: ");
       try {
         userSelection = keyboardInput.nextInt();
       } catch (Exception ex) {
@@ -102,11 +102,11 @@ public class PlayerCharacter implements Character {
   public void chooseArmorInteractively() {
     int userSelection = 0;
     do {
-      System.out.println("Select your armor! (Choose number):\n" +
+      System.out.println("\nSelect your armor! (Choose number):\n" +
               "1) Chain Mail\n" +
               "2) Plate Armor\n" +
               "3) Mithril Coat\n" +
-              "Your selection, sire? : ");
+              "\nYour selection, sire?: ");
       try {
         userSelection = keyboardInput.nextInt();
       } catch (Exception ex) {
