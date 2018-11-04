@@ -177,7 +177,7 @@ public class PlayerCharacter implements Character {
 
   @Override
   public void printStats() {
-    System.out.println("Name: " + getName() +
+    System.out.println("\nName: " + getName() +
             "\nHealth: " + getHealth() +
             "\nAge: " + getAge() +
             "\nGold: $" + getGold() +

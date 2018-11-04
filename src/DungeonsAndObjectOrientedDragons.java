@@ -74,11 +74,13 @@ class DungeonsAndObjectOrientedDragons {
    * Allows user to enter a name, choose a weapon and armor, but auto-generates the rest
    */
   private static void createPlayerCharacterInteractively() {
+    System.out.println("BeginCreatePlayerChar()");
     pc = new PlayerCharacter();
 
-    System.out.print("Enter the name of your knight: ");
+    System.out.println("Enter the name of your knight: ");
     String name = null;
     try {
+      keyboardInput.nextLine(); // advancing to avoid repeat of previous entry
       name = keyboardInput.nextLine();
     }
     catch (Exception ex) {
@@ -97,7 +99,6 @@ class DungeonsAndObjectOrientedDragons {
   public static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
     for (int i = 0; i < numberOfNonPlayerCharacters; ++i) {
       int randomInteger = ((int) ((Math.random() * 3) + 1));
-      System.out.println("I generated " + randomInteger);
       switch (randomInteger) {
         case 1: {
           NON_PLAYER_CHARACTER_ARRAY.add(new Hobgoblin());
@@ -112,7 +113,7 @@ class DungeonsAndObjectOrientedDragons {
           break;
         }
         default:
-          System.out.print("\nError while generating monster. Exiting\n");
+          System.out.print("\nError while generating non-player characters. Exiting\n");
           System.exit(1);
       }
     }

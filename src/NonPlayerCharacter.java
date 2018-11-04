@@ -53,11 +53,11 @@ public abstract class NonPlayerCharacter implements Character {
 
   @Override
   public void printStats() {
-    System.out.println("Name: " + getName() +
+    System.out.println("\nName: " + getName() +
             "\nHealth: " + getHealth() +
             "\nGold: $" + getGold() +
-            "\nWeapon: " + getWeapon() +
-            "\nArmor: " + getArmor());
+            "\nWeapon: " + myWeapon.getName() +
+            "\nArmor: " + myArmor.getName());
   }
 
   public void setHealth(int health) {
