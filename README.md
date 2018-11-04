@@ -4,8 +4,8 @@ In this text based game, the user creates a knight who fights against monsters i
 ## Table of Contents
 **[How to Run this Program](#how-to-run-this-program)**<br />
 **[Game Overview](#game-overview)**<br />
-**[Running the program](#running-the-program)**<br />
-**[Examples of readability analyses](#examples-of-readability-analyses)**<br /> 
+**[Typical Output for Interactively creating a knight](#typical-output-for-interactively-creating-a-knight)**<br />
+**[Typical Output for Automatically creating a knight](#typical-output-for-automatically-creating-a-knight)**<br />
 
 ## How to Run this Program
 ### Downloading
@@ -22,21 +22,20 @@ java -jar dungeons-and-oo-dragons.jar
 You may need a recent version of the Java Runtime Environment (JRE) to run this program.<br />
 
 ## Game Overview
-See Figure 1 for a class diagram.<br />
+See **Figure 1** for a class diagram.<br />
 * The knights and the monsters are instances of the **PlayerCharacter** (PC) and **NonPlayerCharacter** (NPC) classes, respectively.
 * Both the **PlayerCharacter** and **NonPlayerCharacter** classes implement the **Character** Interface.
 * The **NonPlayerCharacter** class is abstract and is extended by a few monster subclasses, like **Dragon**, **Hobgoblin**, and **Bugbear**.
-* The **DungeonsAndObjectOrientedDragons** class contains the main entry point and walks the player through initial character creation.
+* The **DungeonsAndObjectOrientedDragons** class contains the main entry point and walks the player through the initial character creation.
 * The **Encounter** class manages the battles between the knights and the monsters.
 * The **PlayerCharacter** and **NonPlayerCharacter** each have **Weapon** and **Armor** objects.
 * All characters can attack and defend against attacks from other characters. 
 * When a character is slain, its gold is looted by the victor.
 
-## Class Design
 **Figure 1 - Class Diagram**
 ![Class diagram](https://github.com/mikeuf/dungeons-and-oo-dragons/blob/master/images/class-diagram.jpg "Class diagram")
 
-## Typical Output
+## Typical Output for Interactively creating a knight
 **Figure 2 - Interactively creating a knight**
 ```
 Welcome to Dungeons and Object Oriented Dragons!
@@ -246,11 +245,8 @@ Exiting program. I wish you good fortune in the wars to come...
 <br />
 <br />
 <br />
-
+## Typical Output - Automatically creating a knight
 **Figure 3 - Automatically creating a knight**
-
-
-
 ```
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
