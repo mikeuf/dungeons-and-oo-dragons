@@ -14,34 +14,29 @@ public class PlayerCharacter implements Character {
   private int age;
   private int gold;
   private final int GOLD_MULTIPLIER = 100;
-  private final int HEALTH_MULTIPLIER = 50;
+  private final int HEALTH_MULTIPLIER = 25;
   private final int AGE_MULTIPLIER = 47;
+  private final int ATTACK_MODIFIER = 3;
+  private final int DEFENSE_MODIFIER = 2;
   private final Scanner keyboardInput = new Scanner(System.in);
 
   /**
     * ctor automatically initializes some knight attributes if the knight is auto-generated
     */
   public PlayerCharacter() {
-    setHealth((int) ((Math.random() * HEALTH_MULTIPLIER) + 50));
+    setHealth((int) ((Math.random() * HEALTH_MULTIPLIER) + 25));
     setGold((int) ((Math.random() * GOLD_MULTIPLIER) + 20));
     setAge((int) ((Math.random() * AGE_MULTIPLIER) + 18));
   }
 
-  public int attack(NonPlayerCharacter npc) {
-    System.out.printf("\n%s strikes the %s with his %s, ", name, npc.getName(), myWeapon.getName());
-    /*
-     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
-     * damage is 5-13 hit points +/- the modifier
-     */
-    int modifier = myWeapon.getAttackPower() - npc.getDefenseLevel();
-    if (modifier < 1) { //  if a weak weapon is up again powerful armor, just default to 1 instead of a negative
-      modifier = 1;
-    }
-
-    int damage = ((int)(((Math.random() * 8) + modifier + 5)));
-    System.out.printf("causing %d damage!\n", damage);
-
+  public int attack() {
+    int damage = (int)((Math.random() * myWeapon.getAttackPower()) + ATTACK_MODIFIER);
     return damage;
+  }
+
+  public int defend() {
+    int defense = (int)((Math.random() * myArmor.getDefenseLevel()) + DEFENSE_MODIFIER);
+    return defense;
   }
 
   /**
@@ -75,13 +70,13 @@ public class PlayerCharacter implements Character {
   private void generateWeapon(int weaponNumber) {
     switch (weaponNumber) {
       case 1:
-        this.myWeapon = new Weapon("Long Sword", 4);
+        this.myWeapon = new Weapon("Long Sword", 8);
         break;
       case 2:
-        this.myWeapon = new Weapon("Battle Axe", 5);
+        this.myWeapon = new Weapon("Battle Axe", 10);
         break;
       case 3:
-        this.myWeapon = new Weapon("Nunchuks", 3);
+        this.myWeapon = new Weapon("Nunchuks", 6);
         break;
       default:
         System.out.print("\nError while choosing auto weapon\n");
@@ -127,13 +122,13 @@ public class PlayerCharacter implements Character {
   private void generateArmor(int armorNumber) {
     switch (armorNumber) {
       case 1:
-        this.myArmor = new Armor("Chain Mail", 3);
+        this.myArmor = new Armor("Chain Mail", 6);
         break;
       case 2:
-        this.myArmor = new Armor("Plate Armor", 4);
+        this.myArmor = new Armor("Plate Armor", 8);
         break;
       case 3:
-        this.myArmor = new Armor("Mithril Coat", 5);
+        this.myArmor = new Armor("Mithril Coat", 10);
         break;
       default:
         System.out.println("An unexpected error occurred while choosing armor. Exiting program.");
@@ -186,15 +181,11 @@ public class PlayerCharacter implements Character {
             "\nArmor: " + myArmor.getName());
   }
 
-  public int getDefenseLevel() {
-    return myArmor.getDefenseLevel();
-  }
-
-  public String getWeapon() {
+  public String getWeaponName() {
     return myWeapon.getName();
   }
 
-  public String getArmor() {
+  public String getArmorName() {
     return myArmor.getName();
   }
 

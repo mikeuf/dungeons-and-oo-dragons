@@ -17,27 +17,22 @@ public abstract class NonPlayerCharacter implements Character {
   protected Armor myArmor;
   protected int health;
   protected int gold;
+  private final int ATTACK_MODIFIER = 3;
+  private final int DEFENSE_MODIFIER = 1;
 
   NonPlayerCharacter() {
     this.health = 0;
     this.gold = 0;
   }
 
-  public int attack(PlayerCharacter pc) {
-    System.out.printf("\nThe %s assails %s with its %s, ", name, pc.getName(), myWeapon.getName());
-    /*
-     * when calculating damage amount include difference in the weapon strength vs opponent armor strength
-     * damage is 5-13 hit points +/- the modifier
-     */
-    int modifier = myWeapon.getAttackPower() - pc.getDefenseLevel();
-    if (modifier < 1) { //  if a weak weapon is up again powerful armor, just default to 1 instead of a negative
-      modifier = 1;
-    }
-
-    int damage = ((int)(((Math.random() * 8) + modifier + 5)));
-    System.out.printf("causing %d damage!\n", damage);
-
+  public int attack() {
+    int damage = (int)((Math.random() * myWeapon.getAttackPower()) + ATTACK_MODIFIER);
     return damage;
+  }
+
+  public int defend() {
+    int defense = (int)((Math.random() * myArmor.getDefenseLevel()) + DEFENSE_MODIFIER);
+    return defense;
   }
 
   @Override
@@ -49,10 +44,6 @@ public abstract class NonPlayerCharacter implements Character {
             "\nArmor: " + myArmor.getName());
   }
 
-  public int getDefenseLevel() {
-    return myArmor.getDefenseLevel();
-  }
-
   public String getName() {
     return name;
   }
@@ -61,20 +52,12 @@ public abstract class NonPlayerCharacter implements Character {
     this.name = name;
   }
 
-  public Weapon getMyWeapon() {
-    return myWeapon;
+  public String getWeaponName() {
+    return myWeapon.getName();
   }
 
-  public void setMyWeapon(Weapon myWeapon) {
-    this.myWeapon = myWeapon;
-  }
-
-  public Armor getMyArmor() {
-    return myArmor;
-  }
-
-  public void setMyArmor(Armor myArmor) {
-    this.myArmor = myArmor;
+  public String getArmorName() {
+    return myArmor.getName();
   }
 
   public int getHealth() {

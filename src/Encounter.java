@@ -57,18 +57,44 @@ class Encounter {
         System.out.println("An unexpected error occurred: " + ex);
       }
 
-      // The npc always get first-strike since they are the attackers
-      int damage = npc.attack(pc);
-      pc.setHealth(pc.getHealth() - damage);
+      // Monsters/NPCs attack first
+      System.out.printf("\nThe %s assails %s with its %s, ", npc.getName(), pc.getName(), npc.getWeaponName());
+      int damage = npc.attack() - pc.defend();
 
+      if (damage > 0) {
+        System.out.printf("causing %d damage!\n", damage);
+        pc.setHealth(pc.getHealth() - damage);
+      } else { // if the defense value is higher than the attack, the attack is a "miss"
+        System.out.printf("and misses!");
+      }
+
+      // check to see if the player was killed
       if (pc.getHealth() <= 0) {
         GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST;
         return;
       }
 
-      damage = pc.attack(npc);
-      npc.setHealth(npc.getHealth() - damage);
+      // Now the player attacks the NPC/Monster
+      System.out.printf("\n%s swings at the %s with his %s, ", pc.getName(), npc.getName(), pc.getWeaponName());
+      damage = pc.attack() - npc.defend();
 
+      // if we are past round three, double the damage to the NPC to speed things up
+      if (roundNumber > 3) {
+        damage *= 2;
+      }
+      // if we are past around five, triple the damage (1.5 * 2 * original damage)
+      if (roundNumber > 5) {
+        damage *= 1.5;
+      }
+
+      if (damage > 0) {
+        System.out.printf("causing %d damage!\n", damage);
+        npc.setHealth(npc.getHealth() - damage);
+      } else {
+        System.out.printf("and misses!");
+      }
+
+      // check to see if the NPC/monster was killed
       if (npc.getHealth() <= 0) {
         GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_WON;
         return;
@@ -85,12 +111,6 @@ class Encounter {
                     "\nThe %s makes off with %s's %d gold coins and donates them to a charity that supports" +
                     "\nunderprivileged %ss of Middle Earth.\n",
             pc.getName(), npc.getName(), pc.getName(), pc.getGold(), npc.getName());
-
-    /*
-    // this ends the loop from the DungeonsAndObjectOrientedDragons class that called the Encounter class
-    // because it is looping through all of the enemies.
-    DungeonsAndObjectOrientedDragons.NON_PLAYER_CHARACTER_ARRAY.clear();
-    */
   }
 
   private void displayBattleWon () {

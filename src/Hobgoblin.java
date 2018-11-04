@@ -7,12 +7,12 @@
 class Hobgoblin extends NonPlayerCharacter {
 
   private final int GOLD_MULTIPLIER = 100;
-  private final int HEALTH_MULTIPLIER = 20;
+  private final int HEALTH_MULTIPLIER = 10;
 
   public Hobgoblin() {
     name = "Hobgoblin";
-    this.myWeapon = new Weapon("Cast Iron Skillet", 3);
-    this.myArmor = new Armor("Trash Can Lid for a Breastplate, Suspended with Bungee Cords", 3);
+    this.myWeapon = new Weapon("Cast Iron Skillet", 6);
+    this.myArmor = new Armor("Trash Can Lid for a Breastplate, Suspended with Bungee Cords", 6);
     health = (int) ((Math.random() * HEALTH_MULTIPLIER) + 5);
     gold = (int) ((Math.random() * GOLD_MULTIPLIER) + 10);
   }
