@@ -4,6 +4,8 @@ public class Encounter {
   PlayerCharacter pc;
   NonPlayerCharacter npc;
 
+  private static Scanner keyboardInput = new Scanner(System.in);
+
   Encounter(PlayerCharacter pc, NonPlayerCharacter npc) {
     this.pc = pc;
     this.npc = npc;
@@ -12,9 +14,9 @@ public class Encounter {
             pc.getName(), npc.getName(), npc.myWeapon.getName() + ".");
 
 // print pre-fight stats
-    System.out.print("\nMONSTER STATS:");
+    System.out.printf("\n*** " + npc.getName() + ": Stats ***");
     npc.printStats();
-    System.out.printf("\n%s STATS:", pc.getName());
+    System.out.printf("\n*** %s: Stats ***", pc.getName());
     pc.printStats();
 
     battle();
@@ -30,13 +32,18 @@ public class Encounter {
 
     int roundNumber = 1;
     while ((pc.getHealth() > 0) && (npc.getHealth() > 0)) {
-
-      System.out.print("\nPress Enter to continue the battle...\n");
-      Scanner input = new Scanner(System.in);
-      String anyKey = null;
+      // print updated stats at beginning of reach round
+      System.out.printf("\n*** Starting Round %d ***", roundNumber++);
+      /*
+       * technically, the user can type any value here (not just "c"), and it will still work
+       * the classic "press any key to continue" routine is apparently not easy with the Java Scanner class
+       * and not worth the added complexity for simple proof-of-concept program
+       */
+      System.out.print("\nPress \"c\" to continue the battle...\n");
+      String userInput = null;
 
       try {
-        anyKey = input.nextLine();
+        userInput = keyboardInput.nextLine();
       } catch (Exception ex) {
         System.out.println("An unexpected error occured: " + ex);
       }
@@ -55,9 +62,7 @@ public class Encounter {
       if (npc.getHealth() <= 0) {
         displayBattleWon();
       }
-      // print updated stats at beginning of reach round
-      System.out.printf("\n*** ROUND %d ***", ++roundNumber);
-      System.out.printf("\nHEALTH LEVELS:\n" +
+      System.out.printf("\n*** New Health Levels ***:\n" +
               "%s: %d \n" +
               "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
     }

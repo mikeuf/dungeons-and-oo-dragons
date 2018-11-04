@@ -5,8 +5,6 @@
  */
 public class Balrog extends NonPlayerCharacter {
 
-  private Weapon myWeapon;
-  private Armor myArmor;
   private final int GOLD_MULTIPLIER = 500;
   private final int HEALTH_MULTIPLIER = 50;
 

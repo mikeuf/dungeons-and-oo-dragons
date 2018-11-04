@@ -36,6 +36,8 @@ class DungeonsAndObjectOrientedDragons {
 
     generateNonPlayerCharacters(numberOfNonPlayerCharacters);
 
+    System.out.println("\nNow entering the dungeon...");
+
     // create a battle for each NPC
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
       Encounter anEncounter = new Encounter(pc, npc);
@@ -138,6 +140,11 @@ class DungeonsAndObjectOrientedDragons {
       else if (userChoice == 2) {
         createPlayerCharacterAutomatically();
       }
+
+      System.out.println("\nYour knight has been created! Here are your stats:");
+      pc.printStats();
+
+
 
       dungeonOfInfiniteLoops();
 

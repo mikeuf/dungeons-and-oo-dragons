@@ -37,14 +37,18 @@ public abstract class NonPlayerCharacter implements Character {
   // public abstract int fight(PlayerCharacter k);
 
   public int attack(PlayerCharacter pc) {
-    System.out.printf("\n%s strikes the %s with his %s! ", name, pc.getName(), myWeapon.getName());
+    System.out.printf("\nThe %s strikes %s with its %s!, ", name, pc.getName(), myWeapon.getName());
     /*
      * when calculating damage amount include difference in the weapon strength vs opponent armor strength
      * damage is 5-13 hit points +/- the modifier
      */
     int modifier = myWeapon.getAttackPower() - pc.getDefenseLevel();
+    if (modifier < 1) { //  if a weak weapon is up again powerful armor, just default to 1 instead of a negative
+      modifier = 1;
+    }
 
     int damage = ((int)(((Math.random() * 8) + modifier + 5)));
+    System.out.printf("causing %d damage!\n", damage);
 
     return damage;
   }
