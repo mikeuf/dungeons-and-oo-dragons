@@ -219,7 +219,11 @@ Exiting program. I wish you good fortune in the wars to come...
 <br />
 <br />
 <br />
+
 **Figure 3 - Automatically creating a knight**
+
+
+
 ```
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
@@ -374,3 +378,6 @@ Play again? (y/n): n
 
 Exiting program. I wish you good fortune in the wars to come...
 ```
+
+
+
