@@ -24,10 +24,11 @@ You will need a recent version of the Java Runtime Environment (JRE) to run this
 
 ## Game Overview
 See Figure 1 for a class diagram.<br />
-* The knights and the monsters are instances of the PlayerCharacter (PC) and NonPlayerCharacter (NPC) classes.
+* The knights and the monsters are instances of the PlayerCharacter (PC) and NonPlayerCharacter (NPC) classes, respectively.
 * Both the PlayerCharacter and NonPlayerCharacter classes implement the Character Interface.
 * The NonPlayerCharacter class is abstract and is extended by a few monster subclasses, like Dragon, Hobgoblin, and Bugbear.
-* The Dungeons
+* The DungeonsAndObjectOrientedDragons class contains the Main entry point and walks the player through initial character creation.
+* The Encounter class manages the battles between the knights and the monsters.
 
 Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
  
