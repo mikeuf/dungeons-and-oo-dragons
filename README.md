@@ -14,7 +14,7 @@ https://github.com/mikeuf/dungeons-and-oo-dragons/raw/master/dist/dungeons-and-o
 You may receive a message from your browser stating that the program is "not commonly downloaded and may be dangerous," or something to this effect. Your browser should give you the option to either discard or keep the file.
 ### Running
 Start the program from a command line, using this syntax:<br />
-**java -jar DungeonsAndObjectOrientedDragons.jar**<br />
+**java -jar dungeons-and-oo-dragons.jar**<br />
 <br />
 **Note:** You will need a recent version of the Java Runtime Environment (JRE) to run this program.
 
