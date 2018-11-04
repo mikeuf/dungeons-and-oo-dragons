@@ -4,22 +4,33 @@ public class Encounter {
   PlayerCharacter pc;
   NonPlayerCharacter npc;
 
+  /*
+  private enum GameStatus {
+    GAME_IN_PROGRESS, GAME_OVER_PLAYER_LOST, GAME_OVER_PLAYER_WON;
+  }*/
+
+
   private static Scanner keyboardInput = new Scanner(System.in);
 
   Encounter(PlayerCharacter pc, NonPlayerCharacter npc) {
     this.pc = pc;
     this.npc = npc;
+    DungeonsAndObjectOrientedDragons.currentGameStatus
+    currentGameStatus = DungeonsAndObjectOrientedDragons.currentGameStatus;
     System.out.printf("\n%s is bravely iterating through the Dungeon of Infinite Loops when\n" +
                     "a dreaded %s leaps out from the darkness, brandishing a %s\n",
             pc.getName(), npc.getName(), npc.myWeapon.getName() + ".");
 
-// print pre-fight stats
-    System.out.printf("\n*** " + npc.getName() + ": Stats ***");
+    System.out.printf("\n*** Monster Stats ***");
     npc.printStats();
-    System.out.printf("\n*** %s: Stats ***", pc.getName());
-    pc.printStats();
 
     battle();
+
+    if (currentGameStatus == GameStatus.GAME_OVER_PLAYER_WON) {
+      displayBattleWon();
+    } else if (currentGameStatus == GameStatus.GAME_OVER_PLAYER_LOST) {
+      displayBattleLost();
+    }
   }
 
 
@@ -52,21 +63,20 @@ public class Encounter {
       int damage = npc.attack(pc);
       pc.setHealth(pc.getHealth() - damage);
 
-      boolean isBattleFinished = false;
       if (pc.getHealth() <= 0) {
-        isBattleFinished = true;
-        displayBattleLost();
+        currentGameStatus = GameStatus.GAME_OVER_PLAYER_LOST
+        break;
       }
 
       damage = pc.attack(npc);
       npc.setHealth(npc.getHealth() - damage);
 
       if (npc.getHealth() <= 0) {
-        isBattleFinished = true;
-        displayBattleWon();
+        currentGameStatus = GameStatus.GAME_OVER_PLAYER_WON
+        break;
       }
 
-      if (!isBattleFinished) {
+      if (currentGameStatus == GameStatus.GAME_IN_PROGRESS) {
         System.out.printf("\n*** New Health Levels ***:\n" +
                 "%s: %d \n" +
                 "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
@@ -76,13 +86,15 @@ public class Encounter {
 
   private void displayBattleLost () {
     System.out.printf("\nOh no! %s has been vanquished in battle." +
-                    "\nThe %s makes off with %s's %d gold coins and donates them to\n" +
-                    "\na charity that supports underprivileged %ss of Middle Earth.\n",
+                    "\nThe %s makes off with %s's %d gold coins and donates them to a charity that supports" +
+                    "\n underprivileged %ss of Middle Earth.\n",
             pc.getName(), npc.getName(), pc.getName(), pc.getGold(), npc.getName());
 
+    /*
     // this ends the loop from the DungeonsAndObjectOrientedDragons class that called the Encounter class
     // because it is looping through all of the enemies.
     DungeonsAndObjectOrientedDragons.NON_PLAYER_CHARACTER_ARRAY.clear();
+    */
   }
 
   private void displayBattleWon () {

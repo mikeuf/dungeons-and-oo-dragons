@@ -11,6 +11,12 @@ import java.util.Scanner;
  * */
 class DungeonsAndObjectOrientedDragons {
 
+  private static enum GameStatus {
+    GAME_IN_PROGRESS, GAME_OVER_PLAYER_LOST, GAME_OVER_PLAYER_WON;
+  }
+
+  protected static GameStatus currentGameStatus;
+
   /** stores player character (PC) for fighting */
   protected static PlayerCharacter pc;
 
@@ -51,7 +57,7 @@ class DungeonsAndObjectOrientedDragons {
    */
   private static void displayWelcomeMessage() {
     System.out.println("Welcome to Dungeons and Object Oriented Dragons!" +
-            "You are a brave knight who is about to enter the Dungeon of Infinite Loops.");
+            "\nYou are a brave knight who is about to enter the Dungeon of Infinite Loops.");
   }
 
   private static int chooseInteractiveOrAutomaticCreation() {
@@ -132,6 +138,7 @@ class DungeonsAndObjectOrientedDragons {
     String playAgain = null; // must be initialized outside of the loop for scoping reasons
 
     do {
+      currentGameStatus = GameStatus.GAME_IN_PROGRESS;
       NON_PLAYER_CHARACTER_ARRAY.clear();
 
       // player can create a new knight interactively or have the program automatically generate one
