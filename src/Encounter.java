@@ -52,7 +52,9 @@ public class Encounter {
       int damage = npc.attack(pc);
       pc.setHealth(pc.getHealth() - damage);
 
+      boolean isBattleFinished = false;
       if (pc.getHealth() <= 0) {
+        isBattleFinished = true;
         displayBattleLost();
       }
 
@@ -60,11 +62,15 @@ public class Encounter {
       npc.setHealth(npc.getHealth() - damage);
 
       if (npc.getHealth() <= 0) {
+        isBattleFinished = true;
         displayBattleWon();
       }
-      System.out.printf("\n*** New Health Levels ***:\n" +
-              "%s: %d \n" +
-              "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
+
+      if (!isBattleFinished) {
+        System.out.printf("\n*** New Health Levels ***:\n" +
+                "%s: %d \n" +
+                "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
+      }
     }
   }
 
@@ -80,9 +86,8 @@ public class Encounter {
   }
 
   private void displayBattleWon () {
-    System.out.printf("\nThe %s hath been slain by %s!" +
-                    "\nThe %s had %d gold coins which %s is now pocketing.",
-            npc.getName(), pc.getName(), npc.getName(), npc.getGold(), pc.getName());
+    System.out.printf("\nThe %s hath been slain by %s! It had %d gold coins which %s is now pocketing.",
+            npc.getName(), pc.getName(), npc.getGold(), pc.getName());
 
 // transfer the gold from the npc to the pc
     pc.setGold(pc.getGold() + npc.getGold());
