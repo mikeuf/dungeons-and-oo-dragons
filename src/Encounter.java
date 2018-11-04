@@ -86,6 +86,6 @@ public class Encounter {
 
 // transfer the gold from the npc to the pc
     pc.setGold(pc.getGold() + npc.getGold());
-    System.out.printf("\n%s now has %d gold coins.\n", pc.getGold());
+    System.out.printf("\n%s now has %d gold coins.\n", pc.getName(), pc.getGold());
   }
 }

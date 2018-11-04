@@ -40,7 +40,9 @@ class DungeonsAndObjectOrientedDragons {
 
     // create a battle for each NPC
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
-      Encounter anEncounter = new Encounter(pc, npc);
+      if (NON_PLAYER_CHARACTER_ARRAY.size() > 0) {
+        Encounter anEncounter = new Encounter(pc, npc);
+      }
     }
   }
 
