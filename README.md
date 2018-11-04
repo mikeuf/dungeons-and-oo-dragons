@@ -1,5 +1,5 @@
 # Dungeons and Object Oriented Dragons
-In this text based game, the user creates a knight who fights against monsters in the "Dungeon of Infinite Loops." It is primarily an exercise in using common Object Oriented Design concepts such as abstract classes, interfaces, inheritence and composition.
+In this text-based game, the user creates a knight who fights against monsters in the "Dungeon of Infinite Loops." It is primarily an exercise in using common Object Oriented Design concepts such as abstract classes, interfaces, inheritence and composition.
 
 ## Table of Contents
 **[How to Run this Program](#how-to-run-this-program)**<br />
