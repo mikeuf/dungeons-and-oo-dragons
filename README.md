@@ -7,7 +7,7 @@ All characters can defend against attacks from other characters. Depending on th
 
 ## Class Design
 **Figure 1 - Class Diagram**
-![Class diagram](https://github.com/mikeuf/dungeons-and-oo-dragons/blob/master/src/class-diagram.png "Class diagram")
+![Class diagram](https://github.com/mikeuf/dungeons-and-oo-dragons/blob/master/class-diagram.jpg "Class diagram")
 
 ## Typical Output
 **Figure 2 - Interactively creating a knight**
