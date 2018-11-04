@@ -11,11 +11,10 @@ import java.util.Scanner;
  * */
 class DungeonsAndObjectOrientedDragons {
 
-  private static enum GameStatus {
+/*  private static enum GameStatus {
     GAME_IN_PROGRESS, GAME_OVER_PLAYER_LOST, GAME_OVER_PLAYER_WON;
   }
-
-  protected static GameStatus currentGameStatus;
+*/
 
   /** stores player character (PC) for fighting */
   protected static PlayerCharacter pc;
@@ -44,10 +43,15 @@ class DungeonsAndObjectOrientedDragons {
 
     System.out.println("\nNow entering the dungeon...");
 
-    // create a battle for each NPC
+    /*
+     * for each NPC, create an encounter
+     * Verify that the array is not empty and that the game is not over before creating an encounter
+     */
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
-      if (NON_PLAYER_CHARACTER_ARRAY.size() > 0) {
+      if ((NON_PLAYER_CHARACTER_ARRAY.size() > 0) &&
+              (GameStatus.theCurrentGameStatus == GameStatus.CurrentGameStatus.GAME_IN_PROGRESS)) {
         Encounter anEncounter = new Encounter(pc, npc);
+
       }
     }
   }
@@ -138,7 +142,8 @@ class DungeonsAndObjectOrientedDragons {
     String playAgain = null; // must be initialized outside of the loop for scoping reasons
 
     do {
-      currentGameStatus = GameStatus.GAME_IN_PROGRESS;
+      GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_IN_PROGRESS;
+
       NON_PLAYER_CHARACTER_ARRAY.clear();
 
       // player can create a new knight interactively or have the program automatically generate one
@@ -161,10 +166,11 @@ class DungeonsAndObjectOrientedDragons {
       System.out.print("\nPlay again? (y/n): ");
 
       // running nextLine() twice to clear the buffer, so it doesn't auto trigger
+      keyboardInput.nextLine();
       playAgain = keyboardInput.nextLine();
 
       if (playAgain.equalsIgnoreCase("n")) {
-        System.out.print("\nExiting program... \n");
+        System.out.print("\nExiting program... I wish you good fortune in the wars to come.\n");
         System.exit(0);
       } else if ((!(playAgain.equalsIgnoreCase("n")) &&
               (!(playAgain.equalsIgnoreCase("y"))))) {

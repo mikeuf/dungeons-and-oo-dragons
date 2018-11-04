@@ -15,8 +15,6 @@ public class Encounter {
   Encounter(PlayerCharacter pc, NonPlayerCharacter npc) {
     this.pc = pc;
     this.npc = npc;
-    DungeonsAndObjectOrientedDragons.currentGameStatus
-    currentGameStatus = DungeonsAndObjectOrientedDragons.currentGameStatus;
     System.out.printf("\n%s is bravely iterating through the Dungeon of Infinite Loops when\n" +
                     "a dreaded %s leaps out from the darkness, brandishing a %s\n",
             pc.getName(), npc.getName(), npc.myWeapon.getName() + ".");
@@ -26,9 +24,9 @@ public class Encounter {
 
     battle();
 
-    if (currentGameStatus == GameStatus.GAME_OVER_PLAYER_WON) {
+    if (GameStatus.theCurrentGameStatus == GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_WON) {
       displayBattleWon();
-    } else if (currentGameStatus == GameStatus.GAME_OVER_PLAYER_LOST) {
+    } else if (GameStatus.theCurrentGameStatus == GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST) {
       displayBattleLost();
     }
   }
@@ -64,7 +62,7 @@ public class Encounter {
       pc.setHealth(pc.getHealth() - damage);
 
       if (pc.getHealth() <= 0) {
-        currentGameStatus = GameStatus.GAME_OVER_PLAYER_LOST
+        GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST;
         break;
       }
 
@@ -72,22 +70,20 @@ public class Encounter {
       npc.setHealth(npc.getHealth() - damage);
 
       if (npc.getHealth() <= 0) {
-        currentGameStatus = GameStatus.GAME_OVER_PLAYER_WON
+        GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_WON;
         break;
       }
 
-      if (currentGameStatus == GameStatus.GAME_IN_PROGRESS) {
         System.out.printf("\n*** New Health Levels ***:\n" +
                 "%s: %d \n" +
                 "%s: %d \n", pc.getName(), pc.getHealth(), npc.getName(), npc.getHealth());
-      }
     }
   }
 
   private void displayBattleLost () {
     System.out.printf("\nOh no! %s has been vanquished in battle." +
                     "\nThe %s makes off with %s's %d gold coins and donates them to a charity that supports" +
-                    "\n underprivileged %ss of Middle Earth.\n",
+                    "\nunderprivileged %ss of Middle Earth.\n",
             pc.getName(), npc.getName(), pc.getName(), pc.getGold(), npc.getName());
 
     /*
