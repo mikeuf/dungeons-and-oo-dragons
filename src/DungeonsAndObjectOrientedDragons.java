@@ -97,16 +97,19 @@ class DungeonsAndObjectOrientedDragons {
   public static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
     for (int i = 0; i < numberOfNonPlayerCharacters; ++i) {
       int randomInteger = ((int) ((Math.random() * 3) + 1));
-
+      System.out.println("I generated " + randomInteger);
       switch (randomInteger) {
         case 1: {
           NON_PLAYER_CHARACTER_ARRAY.add(new Hobgoblin());
+          break;
         }
         case 2: {
           NON_PLAYER_CHARACTER_ARRAY.add(new Bugbear());
+          break;
         }
         case 3: {
           NON_PLAYER_CHARACTER_ARRAY.add(new Balrog());
+          break;
         }
         default:
           System.out.print("\nError while generating monster. Exiting\n");
