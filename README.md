@@ -1,8 +1,9 @@
 # Dungeons and Object Oriented Dragons
-This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented Programming concepts (OOP) such as abstract classes, interfaces and inheritence. In this game, the user can creates a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs) in the form of monsters.<br />
+This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented Design concepts such as abstract classes, interfaces and inheritence. 
 
 ## Table of Contents
 **[How to Run this Program](#how-to-run-this-program)**  
+**[Game Overview](#game-overview)**
 **[Running the program](#running-the-program)**  
 **[Examples of readability analyses](#examples-of-readability-analyses)**<br /> 
 
@@ -20,6 +21,9 @@ java -jar dungeons-and-oo-dragons.jar
 <br />
 <br />
 You will need a recent version of the Java Runtime Environment (JRE) to run this program.
+
+## Game Overview
+In this game, the user can creates a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs) in the form of monsters.<br />
 
 Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
  
