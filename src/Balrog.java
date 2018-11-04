@@ -5,15 +5,15 @@
  */
 public class Balrog extends NonPlayerCharacter {
 
+  private Weapon myWeapon;
+  private Armor myArmor;
   private final int GOLD_MULTIPLIER = 500;
   private final int HEALTH_MULTIPLIER = 50;
 
   public Balrog() {
     name = "Balrog";
-    myWeapon.setName("fiery flail");
-    myWeapon.setAttackPower(5);
-    myArmor.setName("enchanted hide");
-    myArmor.setDefenseLevel(5);
+    this.myWeapon = new Weapon("fiery flail", 5);
+    this.myArmor = new Armor("enchanted hide", 5);
     health = (int) ((Math.random() * HEALTH_MULTIPLIER) + 100);
     gold = (int) ((Math.random() * GOLD_MULTIPLIER) + 500);
   }

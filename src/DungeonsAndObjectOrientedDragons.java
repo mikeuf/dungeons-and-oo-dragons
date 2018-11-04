@@ -46,15 +46,15 @@ class DungeonsAndObjectOrientedDragons {
    * Displays short welcome message when the user starts the program
    */
   private static void displayWelcomeMessage() {
-    System.out.print("Welcome to Dungeons and Object Oriented Dragons!" +
+    System.out.println("Welcome to Dungeons and Object Oriented Dragons!" +
             "You are a brave knight who is about to enter the Dungeon of Infinite Loops.");
   }
 
   private static int chooseInteractiveOrAutomaticCreation() {
-    System.out.println("Choose one of the following:" +
+    System.out.println("\nChoose one of the following:" +
             "\n1) Interactively create a new knight" +
             "\n2) Automatically generate a new knight" +
-            "Your choice, my liege? ");
+            "\n\nYour choice, my liege? ");
     Scanner input = new Scanner(System.in);
     int userSelection = input.nextInt();
 
@@ -79,7 +79,13 @@ class DungeonsAndObjectOrientedDragons {
 
     System.out.print("Enter the name of your knight: ");
     final Scanner input = new Scanner(System.in);
-    String name = input.nextLine();
+    String name = null;
+    try {
+      name = input.nextLine();
+    }
+    catch (Exception ex) {
+    System.out.println("An unexpected error occured: " + ex);
+    }
     pc.setName(name);
 
     pc.chooseWeaponInteractively();

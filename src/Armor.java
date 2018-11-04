@@ -3,6 +3,11 @@
     private String name;
     private int defenseLevel;
 
+    Armor(String name, int defenseLevel) {
+     this.name = name;
+     this.defenseLevel = defenseLevel;
+    }
+
     public String getName() {
       return name;
     }

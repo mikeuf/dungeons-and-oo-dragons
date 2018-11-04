@@ -30,8 +30,6 @@ public abstract class NonPlayerCharacter implements Character {
 
 
   NonPlayerCharacter() {
-    generateWeapon();
-    generateArmor();
     this.health = 0;
     this.gold = 0;
   }

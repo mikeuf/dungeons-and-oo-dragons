@@ -18,6 +18,7 @@ public class PlayerCharacter implements Character {
   private final int GOLD_MULTIPLIER = 100;
   private final int HEALTH_MULTIPLIER = 50;
   private final int AGE_MULTIPLIER = 47;
+  private Scanner keyboardInput = new Scanner(System.in);
 
   /**
     * ctor automatically initializes some knight attributes if the knight is auto-generated
@@ -46,8 +47,7 @@ public class PlayerCharacter implements Character {
    *  Allows the player to select a weapon, interactively
    */
   public void chooseWeaponInteractively() {
-    Scanner input = new Scanner(System.in);
-    int userChoice = 0;
+    int userSelection = 0;
     do {
       System.out.println("Select your weapon! (Choose number):\n" +
               "1) Long Sword\n" +
@@ -55,14 +55,17 @@ public class PlayerCharacter implements Character {
               "3) Nunchuks\n" +
               "Your choice my liege? : ");
       try {
-        userChoice = input.nextInt();
+        System.out.println("did I get here?");
+        userSelection = keyboardInput.nextInt();
+        System.out.println("did I get past it?");
       } catch (Exception ex) {
         System.out.println("Enter an integer between 1 and 3.\n" + "(" + ex + ")");
       }
     }
-    while (userChoice < 0 || userChoice > 3);
+    while (userSelection < 0 || userSelection > 3);
 
-    generateWeapon (userChoice);
+    System.out.println("how about here? userSelection: " + userSelection);
+    generateWeapon(userSelection);
   }
 
   /**
@@ -72,23 +75,22 @@ public class PlayerCharacter implements Character {
    * @param weaponNumber
    */
   public void generateWeapon(int weaponNumber) {
+    System.out.println("generateWeapon()");
     switch (weaponNumber) {
       case 1:
-        myWeapon.setName("long sword");
-        myWeapon.setAttackPower(4);
+        this.myWeapon = new Weapon("long sword", 4);
         break;
       case 2:
-        myWeapon.setName("battle axe");
-        myWeapon.setAttackPower(5);
+        this.myWeapon = new Weapon("battle axe", 5);
         break;
       case 3:
-        myWeapon.setName("nunchuks");
-        myWeapon.setAttackPower(3);
+        this.myWeapon = new Weapon("nunchuks", 3);
         break;
       default:
         System.out.print("\nError while choosing auto weapon\n");
         System.exit(1);
     }
+    System.out.println("ending generateWeapon()");
   }
 
   /**
@@ -103,8 +105,7 @@ public class PlayerCharacter implements Character {
    *  Allows the player to select a armor, interactively
    */
   public void chooseArmorInteractively() {
-    Scanner input = new Scanner(System.in);
-    int userChoice = 0;
+    int userSelection = 0;
     do {
       System.out.println("Select your armor! (Choose number):\n" +
               "1) Chain Mail\n" +
@@ -112,14 +113,14 @@ public class PlayerCharacter implements Character {
               "3) Mithril Coat\n" +
               "Your selection, sire? : ");
       try {
-        userChoice = input.nextInt();
+        userSelection = keyboardInput.nextInt();
       } catch (Exception ex) {
         System.out.println("Enter an integer between 1 and 3.\n" + "(" + ex + ")");
       }
     }
-    while (userChoice < 0 || userChoice > 3);
+    while (userSelection < 0 || userSelection > 3);
 
-    generateWeapon (userChoice);
+    generateWeapon (userSelection);
   }
 
   /**
@@ -130,16 +131,13 @@ public class PlayerCharacter implements Character {
   public void generateArmor(int armorNumber) {
     switch (armorNumber) {
       case 1:
-        myArmor.setName("chain mail");
-        myArmor.setDefenseLevel(3);
+        this.myArmor = new Armor("chain mail", 3);
         break;
       case 3:
-        myArmor.setName("chain mail");
-        myArmor.setDefenseLevel(4);
+        this.myArmor = new Armor("plate armor", 4);
         break;
       case 4:
-        myArmor.setName("mithril coat");
-        myArmor.setDefenseLevel(5);
+        this.myArmor = new Armor("mithril coat", 5);
         break;
       default:
         System.out.println("An unexpected error occurred while choosing armor. Exiting program.");

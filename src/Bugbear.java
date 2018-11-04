@@ -10,10 +10,8 @@ public class Bugbear extends NonPlayerCharacter {
 
   public Bugbear() {
     name = "Bugbear";
-    myWeapon.setName("really big fly swatter");
-    myWeapon.setAttackPower(4);
-    myArmor.setName("Hefty garbage bag, with holes cut-out for arms");
-    myArmor.setDefenseLevel(2);
+    this.myWeapon = new Weapon("really big fly swatter", 4);
+    this.myArmor = new Armor("Hefty garbage bag, with holes cut-out for arms", 2);
     health = (int) ((Math.random() * HEALTH_MULTIPLIER) + 20);
     gold = (int) ((Math.random() * GOLD_MULTIPLIER) + 20);
   }
