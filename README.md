@@ -6,8 +6,7 @@ Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). I
 All characters can defend against attacks from other characters. Depending on the defenseLevel of their armor, they can block a portion of the attack or cause the attacker to miss entirely.<br />
 
 ## Typical Output
-
-Figure 1 - Interactively creating a knight
+**Figure 1 - Interactively creating a knight**
 ```
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
@@ -213,9 +212,10 @@ Play again? (y/n):
 
 Exiting program. I wish you good fortune in the wars to come...
 ```
-   
-
-Figure 2 - Automatically creating a knight
+<br />
+<br />
+<br />
+**Figure 2 - Automatically creating a knight**
 ```
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
