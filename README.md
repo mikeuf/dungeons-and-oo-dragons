@@ -35,7 +35,7 @@ See **Figure 1** for a class diagram.<br />
 **Figure 1 - Class Diagram**
 ![Class diagram](https://github.com/mikeuf/dungeons-and-oo-dragons/blob/master/images/class-diagram.jpg "Class diagram")
 
-## Typical Output for Interactively creating a knight
+## Typical Output for Interactively Creating a Knight
 **Figure 2 - Interactively creating a knight**
 ```
 Welcome to Dungeons and Object Oriented Dragons!
@@ -242,10 +242,9 @@ Play again? (y/n):
 
 Exiting program. I wish you good fortune in the wars to come...
 ```
-<br />
-## Typical Output for Automatically creating a knight
-**[Back to Top](#table-of-contents)**<br />
-**Figure 3 - Automatically creating a knight**<br />
+
+## Typical Output for Automatically Creating a Knight
+**Figure 3 - Automatically creating a knight**
 
 ```
 Welcome to Dungeons and Object Oriented Dragons!
