@@ -1,10 +1,10 @@
 # Dungeons and Object Oriented Dragons
-This is a silly, "Dungeons and Dragons" inspired game. It is primarily an exercise in using common Object Oriented Design concepts such as abstract classes, interfaces and inheritence. 
+In this text based game, the user creates a knight who fights against monsters in the "Dungeon of Infinite Loops." It is primarily an exercise in using common Object Oriented Design concepts such as abstract classes, interfaces and inheritence. 
 
 ## Table of Contents
-**[How to Run this Program](#how-to-run-this-program)**  
-**[Game Overview](#game-overview)**
-**[Running the program](#running-the-program)**  
+**[How to Run this Program](#how-to-run-this-program)**<br />
+**[Game Overview](#game-overview)**<br />
+**[Running the program](#running-the-program)**<br />
 **[Examples of readability analyses](#examples-of-readability-analyses)**<br /> 
 
 ## How to Run this Program
@@ -23,7 +23,11 @@ java -jar dungeons-and-oo-dragons.jar
 You will need a recent version of the Java Runtime Environment (JRE) to run this program.
 
 ## Game Overview
-In this game, the user can creates a PlayerCharacter (PC) in the form of a knight that is used to fight against NonPlayerCharacters (NPCs) in the form of monsters.<br />
+See Figure 1 for a class diagram.<br />
+* The knights and the monsters are instances of the PlayerCharacter (PC) and NonPlayerCharacter (NPC) classes.
+* Both the PlayerCharacter and NonPlayerCharacter classes implement the Character Interface.
+* The NonPlayerCharacter class is abstract and is extended by a few monster subclasses, like Dragon, Hobgoblin, and Bugbear.
+* The Dungeons
 
 Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). In this game, the NPCs are monsters that will be generated for the PC, controlled by the player, to fight.<br />
  
