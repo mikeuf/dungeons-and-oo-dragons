@@ -5,7 +5,9 @@ Characters can either be PlayerCharacters (PCs) or NonPlayerCharacters (NPCs). I
  
 All characters can defend against attacks from other characters. Depending on the defenseLevel of their armor, they can block a portion of the attack or cause the attacker to miss entirely.<br />
 
-##Typical Output
+## Typical Output
+
+Figure 1 - Interactively creating a knight
 ```
 Welcome to Dungeons and Object Oriented Dragons!
 You are a brave knight who is about to enter the Dungeon of Infinite Loops.
@@ -213,3 +215,158 @@ Exiting program. I wish you good fortune in the wars to come...
 ```
    
 
+Figure 2 - Automatically creating a knight
+```
+Welcome to Dungeons and Object Oriented Dragons!
+You are a brave knight who is about to enter the Dungeon of Infinite Loops.
+
+Choose one of the following:
+1) Interactively create a new knight
+2) Automatically generate a new knight
+
+Your choice, my liege? 
+2
+
+Your knight has been created! Here are your stats:
+Name: Sir Loin
+Health: 35
+Age: 28
+Gold: $83
+Weapon: Nunchuks
+Armor: Mithril Coat
+
+How many monsters would you like Sir Loin to fight?
+2
+
+Now entering the dungeon...
+
+Sir Loin is bravely iterating through the Dungeon of Infinite Loops when
+a dreaded Dragon leaps out from the darkness, brandishing a Snoutful of Flames.
+
+*** Monster Stats ***
+Name: Dragon
+Health: 26
+Gold: $755
+Weapon: Snoutful of Flames
+Armor: Enchanted Hide
+
+*** Starting Round 1 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, and misses!
+
+Sir Loin swings at the Dragon with his Nunchuks, causing 1 damage!
+
+*** New Health Levels ***:
+Sir Loin: 35 
+Dragon: 25 
+
+*** Starting Round 2 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, causing 7 damage!
+
+Sir Loin swings at the Dragon with his Nunchuks, and misses!
+
+*** New Health Levels ***:
+Sir Loin: 28 
+Dragon: 25 
+
+*** Starting Round 3 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, causing 1 damage!
+
+Sir Loin swings at the Dragon with his Nunchuks, causing 6 damage!
+
+*** New Health Levels ***:
+Sir Loin: 27 
+Dragon: 19 
+
+*** Starting Round 4 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, and misses!
+
+Sir Loin swings at the Dragon with his Nunchuks, and misses!
+
+*** New Health Levels ***:
+Sir Loin: 27 
+Dragon: 19 
+
+*** Starting Round 5 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, causing 2 damage!
+
+Sir Loin swings at the Dragon with his Nunchuks, causing 18 damage!
+
+*** New Health Levels ***:
+Sir Loin: 25 
+Dragon: 1 
+
+*** Starting Round 6 ***
+Press "c" to continue the battle...
+c
+
+The Dragon assails Sir Loin with its Snoutful of Flames, causing 6 damage!
+
+Sir Loin swings at the Dragon with his Nunchuks, causing 9 damage!
+
+The Dragon hath been slain by Sir Loin! It had 755 gold coins which Sir Loin is now pocketing.
+Sir Loin now has 838 gold coins.
+
+Sir Loin is bravely iterating through the Dungeon of Infinite Loops when
+a dreaded Bugbear leaps out from the darkness, brandishing a Really Big Fly Swatter.
+
+*** Monster Stats ***
+Name: Bugbear
+Health: 19
+Gold: $215
+Weapon: Really Big Fly Swatter
+Armor: Hefty Garbage Bag, with Holes Cut Out for Arms
+
+*** Starting Round 1 ***
+Press "c" to continue the battle...
+c
+
+The Bugbear assails Sir Loin with its Really Big Fly Swatter, causing 7 damage!
+
+Sir Loin swings at the Bugbear with his Nunchuks, causing 6 damage!
+
+*** New Health Levels ***:
+Sir Loin: 12 
+Bugbear: 13 
+
+*** Starting Round 2 ***
+Press "c" to continue the battle...
+c
+
+The Bugbear assails Sir Loin with its Really Big Fly Swatter, and misses!
+
+Sir Loin swings at the Bugbear with his Nunchuks, causing 1 damage!
+
+*** New Health Levels ***:
+Sir Loin: 12 
+Bugbear: 12 
+
+*** Starting Round 3 ***
+Press "c" to continue the battle...
+c
+
+The Bugbear assails Sir Loin with its Really Big Fly Swatter, causing 1 damage!
+
+Sir Loin swings at the Bugbear with his Nunchuks, causing 18 damage!
+
+The Bugbear hath been slain by Sir Loin! It had 215 gold coins which Sir Loin is now pocketing.
+Sir Loin now has 1053 gold coins.
+
+Play again? (y/n): n
+
+Exiting program. I wish you good fortune in the wars to come...
+```
