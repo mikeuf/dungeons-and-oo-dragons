@@ -37,7 +37,7 @@ public abstract class NonPlayerCharacter implements Character {
   // public abstract int fight(PlayerCharacter k);
 
   public int attack(PlayerCharacter pc) {
-    System.out.printf("\nThe %s strikes %s with its %s, ", name, pc.getName(), myWeapon.getName());
+    System.out.printf("\nThe %s assails %s with its %s, ", name, pc.getName(), myWeapon.getName());
     /*
      * when calculating damage amount include difference in the weapon strength vs opponent armor strength
      * damage is 5-13 hit points +/- the modifier

@@ -45,11 +45,11 @@ class DungeonsAndObjectOrientedDragons {
 
     /*
      * for each NPC, create an encounter
-     * Verify that the array is not empty and that the game is not over before creating an encounter
+     * Verify that the array is not empty and that the game is not lost before creating an encounter
      */
     for (NonPlayerCharacter npc : NON_PLAYER_CHARACTER_ARRAY) {
       if ((NON_PLAYER_CHARACTER_ARRAY.size() > 0) &&
-              (GameStatus.theCurrentGameStatus == GameStatus.CurrentGameStatus.GAME_IN_PROGRESS)) {
+              (GameStatus.theCurrentGameStatus != GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST)) {
         Encounter anEncounter = new Encounter(pc, npc);
 
       }
@@ -122,7 +122,7 @@ class DungeonsAndObjectOrientedDragons {
           break;
         }
         case 3: {
-          NON_PLAYER_CHARACTER_ARRAY.add(new Balrog());
+          NON_PLAYER_CHARACTER_ARRAY.add(new Dragon());
           break;
         }
         default:
@@ -170,7 +170,7 @@ class DungeonsAndObjectOrientedDragons {
       playAgain = keyboardInput.nextLine();
 
       if (playAgain.equalsIgnoreCase("n")) {
-        System.out.print("\nExiting program... I wish you good fortune in the wars to come.\n");
+        System.out.print("\nExiting program. I wish you good fortune in the wars to come...\n");
         System.exit(0);
       } else if ((!(playAgain.equalsIgnoreCase("n")) &&
               (!(playAgain.equalsIgnoreCase("y"))))) {
