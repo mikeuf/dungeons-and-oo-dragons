@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -18,7 +17,7 @@ public class PlayerCharacter implements Character {
   private final int GOLD_MULTIPLIER = 100;
   private final int HEALTH_MULTIPLIER = 50;
   private final int AGE_MULTIPLIER = 47;
-  private Scanner keyboardInput = new Scanner(System.in);
+  private final Scanner keyboardInput = new Scanner(System.in);
 
   /**
     * ctor automatically initializes some knight attributes if the knight is auto-generated
@@ -72,18 +71,18 @@ public class PlayerCharacter implements Character {
    *  Generates a weapon for the player based on a provided integer.
    *  Integer value is the attack power of the weapon.
    *
-   * @param weaponNumber
+   * @param weaponNumber an integer that corresponds with the desired weapon
    */
-  public void generateWeapon(int weaponNumber) {
+  private void generateWeapon(int weaponNumber) {
     switch (weaponNumber) {
       case 1:
-        this.myWeapon = new Weapon("long sword", 4);
+        this.myWeapon = new Weapon("Long Sword", 4);
         break;
       case 2:
-        this.myWeapon = new Weapon("battle axe", 5);
+        this.myWeapon = new Weapon("Battle Axe", 5);
         break;
       case 3:
-        this.myWeapon = new Weapon("nunchuks", 3);
+        this.myWeapon = new Weapon("Nunchuks", 3);
         break;
       default:
         System.out.print("\nError while choosing auto weapon\n");
@@ -124,18 +123,18 @@ public class PlayerCharacter implements Character {
   /**
    *  Generates armor for the player based on provided integer
    *
-   * @param armorNumber
+   * @param armorNumber a unique integer that corresponds with the desired weapon
    */
-  public void generateArmor(int armorNumber) {
+  private void generateArmor(int armorNumber) {
     switch (armorNumber) {
       case 1:
-        this.myArmor = new Armor("chain mail", 3);
+        this.myArmor = new Armor("Chain Mail", 3);
         break;
       case 2:
-        this.myArmor = new Armor("plate armor", 4);
+        this.myArmor = new Armor("Plate Armor", 4);
         break;
       case 3:
-        this.myArmor = new Armor("mithril coat", 5);
+        this.myArmor = new Armor("Mithril Coat", 5);
         break;
       default:
         System.out.println("An unexpected error occurred while choosing armor. Exiting program.");
@@ -204,11 +203,11 @@ public class PlayerCharacter implements Character {
     this.health = health;
   }
 
-  public int getAge() {
+  private int getAge() {
     return age;
   }
 
-  public void setAge(int age) {
+  private void setAge(int age) {
     this.age = age;
   }
 

@@ -1,4 +1,4 @@
-  public class Armor {
+  class Armor {
 
     private String name;
     private int defenseLevel;

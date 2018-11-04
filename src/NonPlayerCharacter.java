@@ -13,9 +13,6 @@ knight will take the treasure and update his gold_ member variable.
 */
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 public abstract class NonPlayerCharacter implements Character {
 
   // placeholders that will be extended by subclasses
@@ -68,7 +65,6 @@ public abstract class NonPlayerCharacter implements Character {
     this.health = health;
   }
 
-  // getters
   public String getName() {
     return this.name;
   }
@@ -86,12 +82,5 @@ public abstract class NonPlayerCharacter implements Character {
     return myArmor.getDefenseLevel();
   }
 
-  public String getWeapon() {
-    return "";
-  }
-
-  String getArmor() {
-    return "";
-  }
 }
 

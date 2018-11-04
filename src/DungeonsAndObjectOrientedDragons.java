@@ -11,18 +11,13 @@ import java.util.Scanner;
  * */
 class DungeonsAndObjectOrientedDragons {
 
-/*  private static enum GameStatus {
-    GAME_IN_PROGRESS, GAME_OVER_PLAYER_LOST, GAME_OVER_PLAYER_WON;
-  }
-*/
-
   /** stores player character (PC) for fighting */
-  protected static PlayerCharacter pc;
+  private static PlayerCharacter pc;
 
   /** stores non-player characters (NPCs) for fighting */
-  protected static ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
+  private static final ArrayList<NonPlayerCharacter> NON_PLAYER_CHARACTER_ARRAY = new ArrayList<>();
 
-  private static Scanner keyboardInput = new Scanner(System.in);
+  private static final Scanner keyboardInput = new Scanner(System.in);
   /**
    * Character can choose number of random enemies to generate.
    * Each monster has multiple attack types, with different damage multipliers. The weapons are selected at random.
@@ -69,9 +64,8 @@ class DungeonsAndObjectOrientedDragons {
             "\n1) Interactively create a new knight" +
             "\n2) Automatically generate a new knight" +
             "\n\nYour choice, my liege? ");
-    int userSelection = keyboardInput.nextInt();
 
-    return userSelection;
+    return keyboardInput.nextInt();
   }
 
   /**
@@ -97,7 +91,7 @@ class DungeonsAndObjectOrientedDragons {
       name = keyboardInput.nextLine();
     }
     catch (Exception ex) {
-    System.out.println("An unexpected error occured: " + ex);
+    System.out.println("An unexpected error occurred: " + ex);
     }
     pc.setName(name);
 
@@ -107,9 +101,9 @@ class DungeonsAndObjectOrientedDragons {
 
   /**
    * Populates the array with random NPCs based on the number that the player requests
-   * @param numberOfNonPlayerCharacters
+   * @param numberOfNonPlayerCharacters the desired number of monsters to create
    */
-  public static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
+  private static void generateNonPlayerCharacters(int numberOfNonPlayerCharacters) {
     for (int i = 0; i < numberOfNonPlayerCharacters; ++i) {
       int randomInteger = ((int) ((Math.random() * 3) + 1));
       switch (randomInteger) {
@@ -139,7 +133,7 @@ class DungeonsAndObjectOrientedDragons {
 
     displayWelcomeMessage();
 
-    String playAgain = null; // must be initialized outside of the loop for scoping reasons
+    String playAgain; // must be initialized outside of the loop for scoping reasons
 
     do {
       GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_IN_PROGRESS;

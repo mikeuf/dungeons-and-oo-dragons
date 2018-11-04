@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Encounter {
-  PlayerCharacter pc;
-  NonPlayerCharacter npc;
+class Encounter {
+  private final PlayerCharacter pc;
+  private final NonPlayerCharacter npc;
 
   /*
   private enum GameStatus {
@@ -10,7 +10,7 @@ public class Encounter {
   }*/
 
 
-  private static Scanner keyboardInput = new Scanner(System.in);
+  private static final Scanner keyboardInput = new Scanner(System.in);
 
   Encounter(PlayerCharacter pc, NonPlayerCharacter npc) {
     this.pc = pc;
@@ -19,7 +19,7 @@ public class Encounter {
                     "a dreaded %s leaps out from the darkness, brandishing a %s\n",
             pc.getName(), npc.getName(), npc.myWeapon.getName() + ".");
 
-    System.out.printf("\n*** Monster Stats ***");
+    System.out.println("\n*** Monster Stats ***");
     npc.printStats();
 
     battle();
@@ -54,7 +54,7 @@ public class Encounter {
       try {
         userInput = keyboardInput.nextLine();
       } catch (Exception ex) {
-        System.out.println("An unexpected error occured: " + ex);
+        System.out.println("An unexpected error occurred: " + ex);
       }
 
       // The npc always get first-strike since they are the attackers
@@ -63,7 +63,7 @@ public class Encounter {
 
       if (pc.getHealth() <= 0) {
         GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_LOST;
-        break;
+        return;
       }
 
       damage = pc.attack(npc);
@@ -71,7 +71,7 @@ public class Encounter {
 
       if (npc.getHealth() <= 0) {
         GameStatus.theCurrentGameStatus = GameStatus.CurrentGameStatus.GAME_OVER_PLAYER_WON;
-        break;
+        return;
       }
 
         System.out.printf("\n*** New Health Levels ***:\n" +
