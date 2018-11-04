@@ -19,8 +19,7 @@ Start the program from a command line, using this syntax:<br />
 java -jar dungeons-and-oo-dragons.jar
 ```
 <br />
-<br />
-You will need a recent version of the Java Runtime Environment (JRE) to run this program.
+You may need a recent version of the Java Runtime Environment (JRE) to run this program.<br />
 
 ## Game Overview
 See Figure 1 for a class diagram.<br />
